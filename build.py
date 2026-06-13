@@ -415,6 +415,9 @@ if __name__ == "__main__":
               open(os.path.join(HERE,"phn.dlw","manifest.dlw.json"),"w",encoding="utf-8"),indent=2,ensure_ascii=False)
     wtok = noesis.mythos_token(WORD)
     word = write_aci(WORD, os.path.join(HERE, "agents"), "fuck", agent_md=word_agent_md(WORD, wtok["moniker"]))
+    json.dump([{"slug":"fuck","name":"FUCK","epithet":"the word","emergence":WORD["emergence"],
+                "moniker":word["moniker"],"kind":"word"}],
+              open(os.path.join(HERE,"agents","_personas.json"),"w",encoding="utf-8"),indent=2,ensure_ascii=False)
     open(os.path.join(HERE, "index.html"), "w", encoding="utf-8").write(index_html(uni["moniker"], word["moniker"]))
     open(os.path.join(HERE, "papers", "fuck.html"), "w", encoding="utf-8").write(paper_html(word["moniker"]))
     print(f"PHONETIKOS built — universe {uni['moniker']} · word {word['moniker']}")
