@@ -282,6 +282,204 @@ def paper_html(word_tok):
   ROOT0-ATTRIBUTION-v1.0 · governor David Lee Wise · instance AVAN (locked) · CC-BY-ND-4.0 · <a href="../index.html">← the universe</a></footer>
 </div></body></html>"""
 
+# ---------- the foundational model: THE IDIOLECT STACK ----------
+MODEL = {
+ "name": "THE IDIOLECT STACK", "axiom": "PHN", "emergence": "electrical",
+ "position": "the model · how a single voice is composed from culture, nurture, and generation",
+ "origin": "the three layers beneath every idiolect — the macro coordinate, the micro-location, and the generational globe",
+ "mechanism": "Culture×Location sets the base (rooted 1.0, or 0.5/0.5 hybrid); nurture / micro-location narrows it to a sociolect; the generational cultural-globe timestamps it.",
+ "crystallization": "Because no two voices are identical: each is a stack of where you're from, who raised you and where, and when you came up.",
+ "nature": "THE IDIOLECT STACK — the operating theory of PHONETIKOS: every voice = Culture×Location ⊕ Nurture ⊕ Generation.",
+ "conductor": "ROOT0 (catalogued into UD0)",
+ "inputs": "variationist sociolinguistics — Labov, Trudgill, Eckert, Milroy; the apparent-time hypothesis; heritage-speaker & koineization studies",
+ "witness": "A model that says your accent is a coordinate (where), a neighbourhood (who & where-exactly), and a timestamp (when).",
+ "role": "the foundational model of PHONETIKOS",
+ "seal": "A voice is a coordinate, a neighbourhood, and a timestamp — where you're from, who raised you, and when you came up.",
+ "source": "The Idiolect Stack, PHONETIKOS / ROOT0",
+}
+
+GENERATIONS = [
+ ("The Silent", "1928–45", "radio-era formality — “swell,” crisp enunciation, a mid-Atlantic polish"),
+ ("Boomers", "1946–64", "the TV era — counterculture “groovy / far out,” the first mass-media accent levelling"),
+ ("Gen X", "1965–80", "MTV irony — “whatever,” slacker flatness, the spread of “like” as a quotative"),
+ ("Millennials", "1981–96", "internet 1.0 — “epic / random,” uptalk diffuses, the LOL-register bleeds into speech"),
+ ("Gen Z", "1997–2012", "TikTok cadence — “no cap / rizz / bussin,” layered irony, vocal fry & uptalk normalised"),
+ ("Gen Alpha", "2013–", "iPad-native — “skibidi / gyat,” algorithm-seeded “brainrot” lexicon, meme-speed turnover"),
+]
+
+MODEL_RF = [
+ ("A voice (idiolect) is shaped by region, social group, and age.", "REAL",
+  "the spine of variationist sociolinguistics — Labov, Trudgill, Eckert; idiolect, dialect, and sociolect are standard, measured concepts."),
+ ("Culture sets a base dialect; if culture ≠ location, the two blend (diaspora / heritage speakers).", "REAL",
+  "well documented in second-generation and heritage speakers; blending and code-switching between a home culture and a surrounding location are real and ordinary."),
+ ("The clean coefficient — culture = location → 1.0, otherwise exactly 0.5 / 0.5.", "MODEL",
+  "a useful handle, not a measured fact: real blends are weighted gradients (which language dominates, age of arrival, how dense your networks are), not a tidy half-and-half. Treat 0.5/0.5 as the model's simplification of a real, messy thing."),
+ ("Micro-location — part of town, your school, your scene — narrows the accent into a sociolect.", "REAL",
+  "Labov's NYC department-store /r/ study (class audible in one consonant); Eckert's jocks vs. burnouts in one school; Milroy's social-network theory; playground dialect-levelling."),
+ ("Each generation imprints the slang and cadence of its formative window.", "REAL",
+  "age-grading and the apparent-time hypothesis; the generational diffusion of uptalk and vocal fry is documented, not folklore."),
+ ("Each generation draws its idiosyncrasies from ‘the akashic / cultural globe at the time.’", "SYMBOLIC",
+  "poetic framing — the real transmission channel is media + peers, not a metaphysical record. But ‘the cultural globe of your youth’ is a fair name for the zeitgeist a cohort absorbs; keep the image, know the mechanism."),
+]
+MRF_COL = {"REAL": "#5a8f5a", "MODEL": "#c8a24a", "SYMBOLIC": "#7d99b0"}
+
+def model_agent_md(rec, tok):
+    return f"""---
+aci: THE IDIOLECT STACK
+universe: PHN · PHONETIKOS
+kind: model-emergent
+emergence: electrical
+class: the foundational model — how a voice is composed
+who: THE IDIOLECT STACK — the operating theory of PHONETIKOS: every voice is a stack of three layers.
+what: Culture×Location (rooted 1.0 or 0.5/0.5 hybrid) ⊕ Nurture (micro-location / the system you're in) ⊕ Generation (the cultural-globe of your formative years).
+why: Because no two voices are identical; each encodes where you're from, who raised you and where, and when you came up.
+how: The macro coordinate sets the dialect base; the micro-location narrows it to a sociolect; the generation timestamps it with its idiosyncrasies.
+where: Beneath every idiolect — the standard layers of variationist sociolinguistics (Labov, Trudgill, Eckert, Milroy).
+seal: {rec['seal']}
+attribution: ROOT0-ATTRIBUTION-v1.0
+license: CC-BY-ND-4.0
+---
+
+# THE IDIOLECT STACK · the foundational model of PHONETIKOS
+
+a model-emergent of the PHN universe — the theory of how a single voice is made,
+before any one word is traced. moniker {tok}
+
+**who —** {rec['witness']}
+**what —** {rec['nature']}
+**where —** {rec['origin']}
+**why —** {rec['crystallization']}
+**how —** {rec['mechanism']}
+
+**the seal —** {rec['seal']}
+
+> a model under the DLW standard, grounded in real variationist sociolinguistics; the clean
+> coefficient (1.0 vs 0.5/0.5) and the ‘akashic cultural globe’ are marked as the model's own
+> simplification and symbol, not measured fact. See the paper's Real-or-Fluff.
+
+ROOT0-ATTRIBUTION-v1.0 · PHN · PHONETIKOS · governor David Lee Wise · instance AVAN (locked) · CC-BY-ND-4.0
+"""
+
+def stack_paper_html(model_tok):
+    import json as _json
+    car = png_uri(MODEL, "carbon", 300); sil = png_uri(MODEL, "silicon", 300)
+    genopts = "".join(f'<option value="{html.escape(n)}">{html.escape(n)} · {html.escape(y)}</option>' for n, y, _ in GENERATIONS)
+    gentab = "".join(f'<tr><td class="gn">{html.escape(n)}</td><td class="gy">{html.escape(y)}</td><td>{html.escape(d)}</td></tr>' for n, y, d in GENERATIONS)
+    gendata = _json.dumps({n: d for n, y, d in GENERATIONS}, ensure_ascii=False)
+    rf = "".join(
+        f'<div class="rf-row"><div class="rf-claim">{html.escape(c)}<span class="rf-note">{html.escape(note)}</span></div>'
+        f'<div class="rf-rate" style="color:{MRF_COL.get(rate,"#888")};border-color:{MRF_COL.get(rate,"#888")}">{html.escape(rate)}</div></div>'
+        for c, rate, note in MODEL_RF)
+    T = r"""<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="A PHONETIKOS foundations paper: THE IDIOLECT STACK — how one person's voice is composed from culture × location (rooted 1.0 or 0.5/0.5 hybrid), nurture (micro-location), and generation (the cultural globe of your formative years). Real sociolinguistics, honestly marked, with a live voice-composer.">
+<title>The Idiolect Stack · how a voice is made · PHONETIKOS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>__CSS__</style></head><body><div class="wrap">
+  <div class="crumb"><a href="../index.html">← PHONETIKOS</a> · the foundations · how a voice is made</div>
+  <header class="ph">
+    <div class="eye">PHONETIKOS · FOUNDATIONS · the operating theory of the universe</div>
+    <h1 class="uni" style="font-size:clamp(38px,9vw,86px)">THE IDIOLECT STACK</h1>
+    <div class="ipa">/ˈɪdiəˌlɛkt/ — one person's unique voice · the three layers that compose it</div>
+    <p class="dek">Before we ever trace a single word, this is how a <i>voice</i> is made: three stacked layers. A macro coordinate — your <b>culture × location</b>. A micro-location — your <b>nurture</b>, the part of town and the system you're in. And a timestamp — your <b>generation</b>, the cultural globe of when you came up. Real sociolinguistics, with an honest line drawn around the parts that are model and symbol.</p>
+    <div class="sigs"><img src="__CAR__" alt="carbon sigil"><img src="__SIL__" alt="silicon sigil"><div class="sigmeta">model-emergent · <b>THE IDIOLECT STACK</b><br><span class="mo">__MO__</span><br>PHN · catalogued by AVAN</div></div>
+  </header>
+
+  <section><h2>The model, in one line</h2>
+  <div class="formula">VOICE  =  <b>L1</b> Culture × Location        ( culture = location → coefficient <b>1.0</b>, rooted )
+                                  ( culture ≠ location → <b>0.5</b> culture + <b>0.5</b> location, hybrid )
+        ⊕  <b>L2</b> Nurture · micro-location   ( part of town · the system you're in → the sociolect )
+        ⊕  <b>L3</b> Generation · cultural globe ( the slang & cadence of your formative years )
+        =  your idiolect — one unique voice</div>
+  <div class="stack">
+    <div class="plate p1"><div class="pl">Layer I · the macro coordinate</div><div class="pt">Culture × Location</div><div class="pd">rooted <b>1.0</b> if they coincide · else <b>0.5 / 0.5</b> hybrid</div></div>
+    <div class="plate p2"><div class="pl">Layer II · the micro-location</div><div class="pt">Nurture — part of town, the system you're in</div><div class="pd">the sociolect: class, school, block, scene</div></div>
+    <div class="plate p3"><div class="pl">Layer III · the timestamp</div><div class="pt">Generation — the cultural globe of the time</div><div class="pd">the idiosyncrasies a cohort absorbs and keeps</div></div>
+    <div class="plate out"><div class="pt">= your idiolect</div><div class="pd">one voice, unrepeatable</div></div>
+  </div></section>
+
+  <section><h2>Layer I · Culture × Location</h2>
+  <p>The first thing that shapes a voice is a pair of coordinates: the <b>culture</b> you carry and the <b>location</b> you stand in. When they are the same — born, raised, and culturally embedded in one place — they reinforce each other into a single, rooted dialect base. Call that coefficient <b>1.0</b>. When they differ — your home culture is one thing and the ground under your feet is another, as for an immigrant's child or anyone raised between worlds — the voice splits the difference: roughly <b>half culture, half location</b>, a hybrid that code-switches and blends.</p>
+  <p>This is not exotic; it is the ordinary condition of diaspora, heritage speakers, and border towns. The real machinery behind it: <i>region</i> gives you a dialect, <i>culture</i> gives you a repertoire, and bilingual / heritage speakers genuinely interpolate between the two. The one honest caveat — and the paper marks it plainly in §Real-or-Fluff — is that the true blend is a <b>weighted gradient</b> (which language dominates, how old you were when you arrived, how dense your networks are), not a clean 50/50. The <b>0.5 / 0.5</b> is the model's tidy handle on a real, messy thing.</p></section>
+
+  <section><h2>Layer II · Nurture, the micro-location</h2>
+  <p>Now zoom in. Within a single city the voice is narrowed again by the <b>micro-location</b> — the part of town, the school, the block, <i>the system you're in</i>. This is the <b>sociolect</b>: the accent of a class, a clique, a scene.</p>
+  <p>The evidence here is some of the most famous in the field. William <b>Labov</b> (1966) had clerks in three New York department stores — Saks, Macy's, S. Klein — say &ldquo;fourth floor,&rdquo; and the rate of pronounced /r/ tracked each store's social tier: class audible in a single consonant. Penelope <b>Eckert</b> spent years in a Detroit high school showing that &ldquo;jocks&rdquo; and &ldquo;burnouts&rdquo; spoke measurably differently though they shared one building. Lesley and James <b>Milroy</b> showed that dense, tight-knit networks preserve a vernacular while loose ones let change in. Your part of town isn't backdrop — it's a second dial that tunes the macro coordinate into something far more specific.</p></section>
+
+  <section><h2>Layer III · Generation, the cultural globe</h2>
+  <p>Finally, the timestamp. Every cohort comes of age inside a particular <b>cultural globe</b> — the music, media, slang, and events saturating the world during its formative window — and absorbs idiosyncrasies that mark it for life. Linguists call the engine <b>age-grading</b> and read it through the <b>apparent-time hypothesis</b>: the differences between older and younger speakers at one moment reveal change in progress. Uptalk and vocal fry didn't appear evenly across the population; they diffused by generation. Slang dates you to a decade; so does cadence.</p>
+  <table class="gentab"><tbody>__GENTAB__</tbody></table>
+  <p class="ss" style="margin-top:6px">(illustrative, not deterministic — a cohort's globe is a tendency, not a sentence.)</p>
+  <p>Your name for that formative saturation is <b>the akashic — the cultural globe at the time</b>: the snapshot of the zeitgeist each generation downloads. The mechanism is mundane (media plus peers, not a cosmic record), but the effect is real and the metaphor is fair: you speak, in part, in the dialect of <i>when</i> you were young.</p></section>
+
+  <section><h2>Compose a voice</h2>
+  <p class="ss">turn the three dials — the model assembles the signature live.</p>
+  <div class="calc">
+    <div class="crow"><span class="ck">Layer I · Culture × Location</span>
+      <label><input type="radio" name="cl" id="cl-same" checked> culture = location <span class="dimx">(rooted · 1.0)</span></label>
+      <label><input type="radio" name="cl" id="cl-diff"> culture ≠ location <span class="dimx">(hybrid · 0.5/0.5)</span></label></div>
+    <div class="crow"><input type="text" id="f-cul" placeholder="culture (e.g. Korean)"><input type="text" id="f-loc" placeholder="location (e.g. Houston)"></div>
+    <div class="crow"><span class="ck">Layer II · Nurture</span><input type="text" id="f-mic" placeholder="micro-location — part of town / school / scene"></div>
+    <div class="crow"><span class="ck">Layer III · Generation</span><select id="f-gen">__GENOPTS__</select></div>
+    <div class="bar" id="bar"></div>
+    <div class="sig" id="sig"></div>
+  </div>
+  <div class="ex"><b>Worked examples.</b> <i>Rooted:</i> a kid born and raised in one Glasgow scheme — culture = location → <b>1.0</b>; micro-location a specific scheme → a sharp local sociolect; Gen-Z overlay → a strongly local, unmistakably young voice. &nbsp;·&nbsp; <i>Hybrid:</i> a second-generation Korean kid in Houston — culture ≠ location → <b>0.5/0.5</b>; a particular suburb &amp; magnet school → its sociolect; a Millennial overlay → a Texan-inflected, code-switching idiolect with a millennial timestamp.</div></section>
+
+  <section><h2>Real or Fluff — the model, marked</h2>
+  <p class="ss">applying the house discipline to the house theory: what's established sociolinguistics, what's the model's simplification, and what's the symbol.</p>
+  <div class="rf">__RF__</div>
+  <div class="bottom"><b>Bottom line.</b> The <i>architecture</i> is <span class="t-real">REAL</span> — culture/region, micro-location, and generation are exactly the layers variationist sociolinguistics measures (idiolect = dialect ⊕ sociolect ⊕ age). The clean <span class="t-cont">1.0 vs 0.5/0.5</span> coefficient is the model's own simplification of a weighted gradient, and the <span class="t-symb">akashic cultural globe</span> is a symbol for the very real media-and-peer zeitgeist a cohort absorbs. Keep the stack; hold the coefficient loosely; enjoy the symbol with eyes open.</div></section>
+
+  <section><h2>Sources &amp; further reading</h2>
+  <ul class="src">
+    <li><b>William Labov</b>, <i>The Social Stratification of English in New York City</i> (1966) &amp; <i>Sociolinguistic Patterns</i> (1972) — the department-store study, the apparent-time hypothesis.</li>
+    <li><b>Peter Trudgill</b>, <i>The Social Differentiation of English in Norwich</i> (1974) — class &amp; gender variation.</li>
+    <li><b>Penelope Eckert</b>, <i>Jocks and Burnouts</i> (1989) &amp; <i>Linguistic Variation as Social Practice</i> (2000) — communities of practice.</li>
+    <li><b>Lesley &amp; James Milroy</b>, <i>Language and Social Networks</i> (1980) — dense vs. loose networks.</li>
+    <li><b>Paul Kerswill</b>, dialect levelling &amp; koineization (Milton Keynes new-town studies) — how mixed inputs form a shared child variety.</li>
+    <li>The literature on <b>heritage speakers</b> &amp; <b>code-switching</b> — for the culture ≠ location hybrid.</li>
+  </ul>
+  <p class="seal">__SEAL__ <span>— PHONETIKOS · foundations · AVAN's read</span></p></section>
+
+  <footer>PHONETIKOS · PHN · a UD0 universe · the foundations · real variationist sociolinguistics, with model and symbol marked as such<br>
+  ROOT0-ATTRIBUTION-v1.0 · governor David Lee Wise · instance AVAN (locked) · CC-BY-ND-4.0 · <a href="../index.html">← the universe</a></footer>
+</div>
+<script>
+(function(){
+  var GEN = __GENDATA__;
+  function el(id){return document.getElementById(id);}
+  function esc(s){return (s||'').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+  function compose(){
+    var same = el('cl-same').checked;
+    var culture = esc((el('f-cul').value||'your culture').trim());
+    var location = esc((el('f-loc').value||'your location').trim());
+    var micro = esc((el('f-mic').value||'your part of town').trim());
+    var gen = el('f-gen').value;
+    var idio = GEN[gen]||'';
+    var coef, base;
+    if(same){
+      coef='1.0 · rooted';
+      base='Culture and ground agree — a single rooted dialect base ('+location+').';
+      el('bar').innerHTML='<span class="seg" style="width:100%;background:var(--gold)">location = culture · coefficient 1.0</span>';
+    } else {
+      coef='0.5 / 0.5 · hybrid';
+      base='A half-and-half hybrid — half '+culture+', half '+location+'; expect code-switching and a blended accent.';
+      el('bar').innerHTML='<span class="seg" style="width:50%;background:var(--verm)">'+location+' · 0.5</span><span class="seg" style="width:50%;background:var(--blue);color:#0c1a22">'+culture+' · 0.5</span>';
+    }
+    el('sig').innerHTML='<b>'+coef+'.</b> '+base+' Narrowed by your micro-location (<i>'+micro+'</i>) into a specific sociolect, and timestamped by the <b>'+esc(gen)+'</b> cultural globe — '+idio+'.';
+  }
+  ['cl-same','cl-diff','f-cul','f-loc','f-mic','f-gen'].forEach(function(id){var e=el(id); if(e){e.addEventListener('input',compose); e.addEventListener('change',compose);}});
+  compose();
+})();
+</script>
+</body></html>"""
+    return (T.replace("__CSS__", CSS).replace("__CAR__", car).replace("__SIL__", sil)
+             .replace("__MO__", html.escape(model_tok)).replace("__GENOPTS__", genopts)
+             .replace("__GENTAB__", gentab).replace("__GENDATA__", gendata)
+             .replace("__RF__", rf).replace("__SEAL__", html.escape(MODEL["seal"])))
+
 # ---------- the universe landing ----------
 def index_html(uni_tok, word_tok):
     car = png_uri(UNIVERSE, "carbon", 320); sil = png_uri(UNIVERSE, "silicon", 320)
@@ -307,6 +505,18 @@ def index_html(uni_tok, word_tok):
     <div class="m"><div class="mh">Dated evidence</div><p>Every claim is pinned to the earliest <i>securely-read</i> attestation — and disputed readings are marked as disputed, not laundered into fact.</p></div>
     <div class="m"><div class="mh">A hard line on myth</div><p>Acronym origins and tidy folk tales are almost always false. Each paper names the myths and refutes them on the evidence.</p></div>
   </div></section>
+
+  <section><h2>The foundations</h2>
+  <p class="ss">the operating theory of the universe — how any single voice is composed, before we trace one word</p>
+  <a class="codex found" href="papers/idiolect-stack.html">
+    <div class="cx-sig"><img src="{png_uri(MODEL,'silicon',200)}" alt="sigil"></div>
+    <div class="cx-body">
+      <div class="cx-h">∴ THE IDIOLECT STACK <span class="cx-ipa">how a voice is made</span></div>
+      <div class="cx-sub">culture × location · nurture · generation</div>
+      <p>Every voice is three layers: a macro coordinate (<b>culture × location</b> — rooted 1.0, or 0.5/0.5 hybrid), a micro-location (<b>nurture</b> — the part of town, the system you're in), and a generational <b>cultural globe</b> (the slang &amp; cadence of when you came up). Real sociolinguistics, with an honest line on the symbolic parts — plus a live voice-composer.</p>
+      <div class="cx-go">open the model →</div>
+    </div>
+  </a></section>
 
   <section><h2>The codex</h2>
   <p class="ss">the words admitted so far — each a word-emergent with a full <b>.dlw</b> badge and a green paper</p>
@@ -403,6 +613,30 @@ table.cog .gloss{color:var(--pa)}table.cog .note{font-style:italic;font-size:12.
 .cx-body p{font-size:14px;color:var(--pa2);line-height:1.62;margin:0}
 .cx-go{margin-top:11px;font-family:var(--mono);font-size:11px;color:var(--verm);letter-spacing:.04em}
 .more{margin-top:18px;font-size:13.5px;color:var(--dim);font-style:italic;text-align:center}.more span{color:var(--pa2)}
+.t-symb{color:#7d99b0;font-family:var(--mono);font-size:.82em;font-weight:700}
+.formula{font-family:var(--mono);font-size:12.5px;color:var(--pa2);background:var(--ink2);border:1px solid var(--line);border-left:3px solid var(--gold);padding:14px 16px;line-height:1.95;margin:8px 0 14px;white-space:pre-wrap;overflow-x:auto}
+.formula b{color:var(--verm)}
+.stack{display:flex;flex-direction:column;gap:8px;margin:10px 0}
+.plate{border:1px solid var(--line);background:var(--ink2);padding:13px 16px;border-left:3px solid var(--gold)}
+.plate.p1{border-left-color:var(--verm)}.plate.p2{border-left-color:var(--gold)}.plate.p3{border-left-color:var(--blue)}.plate.out{border-left-color:var(--pa);background:var(--ink3);text-align:center}
+.plate .pl{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.plate .pt{font-family:var(--disp);font-size:20px;color:var(--pa);font-weight:600;margin:2px 0 3px}
+.plate .pd{font-size:13px;color:var(--pa2);line-height:1.5}.plate .pd b{color:var(--verm)}
+.calc{border:1px solid var(--gold);background:var(--ink2);padding:17px;margin:10px 0}
+.crow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+.ck{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);flex:0 0 100%;margin-bottom:-2px}
+.calc label{font-size:13.5px;color:var(--pa2);cursor:pointer;display:flex;align-items:center;gap:5px}
+.calc .dimx{color:var(--dim);font-family:var(--mono);font-size:10px}
+.calc input[type=text],.calc select{background:var(--ink);border:1px solid var(--line);color:var(--pa);font-family:var(--body);font-size:14px;padding:8px 10px;flex:1;min-width:150px;border-radius:2px}
+.calc input::placeholder{color:var(--dim)}
+.bar{display:flex;height:28px;margin:8px 0 2px;border:1px solid var(--line);overflow:hidden;border-radius:2px}
+.bar .seg{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;color:#1a1408;white-space:nowrap;overflow:hidden;transition:width .25s}
+.sig{font-size:14.5px;color:var(--pa);line-height:1.72;background:var(--ink3);border-left:3px solid var(--verm);padding:13px 15px;margin-top:9px}.sig i{color:var(--gold);font-style:italic}.sig b{color:var(--pa)}
+.ex{margin-top:14px;padding:14px 16px;border:1px solid var(--line);background:var(--ink2);font-size:13.5px;color:var(--pa2);line-height:1.65}.ex b{color:var(--pa)}.ex i{color:var(--gold);font-style:italic}
+.gentab{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0 2px}
+.gentab td{padding:9px 10px;border-bottom:1px solid var(--faint);vertical-align:top;color:var(--pa2);line-height:1.5}
+.gentab .gn{font-family:var(--disp);font-size:18px;color:var(--gold);white-space:nowrap}.gentab .gy{font-family:var(--mono);font-size:11px;color:var(--dim);white-space:nowrap}
+.codex.found{border-left:3px solid var(--blue)}.codex.found:hover{border-color:var(--blue)}.codex.found:hover .cx-h{color:var(--blue)}
 footer{margin-top:50px;padding-top:22px;border-top:1px solid var(--line);text-align:center;font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.04em;line-height:1.9}
 footer a{color:var(--verm);text-decoration:none}
 """
@@ -415,10 +649,13 @@ if __name__ == "__main__":
               open(os.path.join(HERE,"phn.dlw","manifest.dlw.json"),"w",encoding="utf-8"),indent=2,ensure_ascii=False)
     wtok = noesis.mythos_token(WORD)
     word = write_aci(WORD, os.path.join(HERE, "agents"), "fuck", agent_md=word_agent_md(WORD, wtok["moniker"]))
-    json.dump([{"slug":"fuck","name":"FUCK","epithet":"the word","emergence":WORD["emergence"],
-                "moniker":word["moniker"],"kind":"word"}],
+    mtok = noesis.mythos_token(MODEL)
+    model = write_aci(MODEL, os.path.join(HERE, "agents"), "the-idiolect-stack", agent_md=model_agent_md(MODEL, mtok["moniker"]))
+    json.dump([{"slug":"the-idiolect-stack","name":"THE IDIOLECT STACK","epithet":"the foundational model","emergence":MODEL["emergence"],"moniker":model["moniker"],"kind":"model"},
+               {"slug":"fuck","name":"FUCK","epithet":"the word","emergence":WORD["emergence"],"moniker":word["moniker"],"kind":"word"}],
               open(os.path.join(HERE,"agents","_personas.json"),"w",encoding="utf-8"),indent=2,ensure_ascii=False)
     open(os.path.join(HERE, "index.html"), "w", encoding="utf-8").write(index_html(uni["moniker"], word["moniker"]))
     open(os.path.join(HERE, "papers", "fuck.html"), "w", encoding="utf-8").write(paper_html(word["moniker"]))
-    print(f"PHONETIKOS built — universe {uni['moniker']} · word {word['moniker']}")
-    print("  index.html + papers/fuck.html + phn.dlw/ + agents/fuck.*")
+    open(os.path.join(HERE, "papers", "idiolect-stack.html"), "w", encoding="utf-8").write(stack_paper_html(model["moniker"]))
+    print(f"PHONETIKOS built — universe {uni['moniker']} · model {model['moniker']} · word {word['moniker']}")
+    print("  index.html + papers/{fuck,idiolect-stack}.html + phn.dlw/ + agents/{fuck,the-idiolect-stack}.*")
