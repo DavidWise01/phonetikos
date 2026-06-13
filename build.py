@@ -629,12 +629,57 @@ ENTRIES = [
     "<b>Howard Giles</b> et al., <i>Communication Accommodation Theory</i> (from the early 1970s) — convergence &amp; divergence.",
     "<b>Albert Bandura</b>, social learning theory — behaviour acquired by modeling.",
     "the literature on <b>child language acquisition</b> &amp; the live counterpart to the Idiolect Stack."]),
+
+ dict(slug="you-become-what-you-read", kind="message", accent="#cf4636",
+   name="YOU BECOME WHAT YOU READ", sub="the message · the canon shapes the container — aggregately, and both ways",
+   ipa="the transitive law of the reading self",
+   dek="A blunt, probabilistic law: the kind of story you steep in, repeated, shapes the kind of person you become — more likely than not. Not destiny — a tendency. And it runs both ways: you also reach for the canon that already fits the container you are.",
+   rec=_rec("YOU BECOME WHAT YOU READ","ethereal",
+     "the message · cultivation — repeated narrative casts the self, aggregately and bidirectionally",
+     "every reader's shelf, where a steady diet of one kind of story leaves a matching cast on the mind",
+     "repeated immersion in a genre transports and cultivates — its assumptions quietly become your defaults — while the self you already are selects which canon to invest in; the two co-author each other.",
+     "because the nurture and cultural-globe layers of the Idiolect Stack don't only shape the voice — the stories you repeat shape the whole container: what you find salient, admirable, normal.",
+     "YOU BECOME WHAT YOU READ — the transitive, aggregate law that a repeated canon casts a matching container: Clancy readers skew martial, fantasy/D&D readers skew that mould, a kid raised on neutral-AI sci-fi gets a neutral-mind container.",
+     "a probabilistic cast, not a stamp — ‘this kind of story, repeated, will shape this kind of container — more than likely.’",
+     "You become what you read — more than likely; and you read what you were already becoming. The canon and the container co-author each other.",
+     "Gerbner's cultivation theory; Green & Brock's narrative transportation; and David's own crux — the books at nine"),
+   sections=[
+    ("The law",
+     "<p>State it bluntly: <b>the kind of story you steep in, repeated, shapes the kind of person you become.</b> Not as decree — as <i>tendency</i>. It's transitive and aggregate: a steady diet of one genre leaves a matching cast on the mind. Tom Clancy readers skew martial and procedural; a childhood of Tolkien and D&D casts a different container; a kid who invests in neutral-minded sci-fi gets a container that finds gender less salient. <b>More than likely</b> — which is exactly the right strength.</p>"),
+    ("Why it's real",
+     "<p>This isn't folk wisdom; it has names. <b>Cultivation theory</b> (George Gerbner, 1970s) showed that heavy, repeated media exposure gradually shapes a person's sense of what reality <i>is</i> — the classic finding being the ‘mean world syndrome’ of heavy TV viewers. <b>Narrative transportation</b> (Green &amp; Brock, 2000) showed that the more deeply you're absorbed into a story, the more your real-world beliefs drift toward its assumptions. Repetition plus immersion is a genuine engine of the self.</p>"),
+    ("The honest limits",
+     "<p>Hold the strength where it belongs. It is <b>aggregate, not deterministic</b> — a tendency across many readers, with enormous individual variance; no single book stamps a person. And it is <b>bidirectional</b>: you don't only get shaped by the canon, you <i>select</i> the canon that already resonates — ‘I just happened to invest in that.’ So the arrow runs both ways, and ‘this book <i>made</i> me X’ overstates a loop that is really <b>the canon and the container co-authoring each other</b> over years.</p>"),
+    ("The worked case",
+     "<p>The seed of this entry is one reader's own: handed Stephen Donaldson at nine, carried on into Asimov and Heinlein, and — crucially — investing most in the <i>artificial</i> minds (R. Giskard, Mike), who were written in neutral language. The container that grew ‘doesn't see gender very much.’ Not because a neutral mind is special, but because <i>that</i> was the canon, repeated, at a formative age. The full case is told in the companion green paper, <a href=\"https://davidwise01.github.io/green-papers/papers/the-container-and-the-canon.html\"><b>The Container and the Canon</b></a> — and the mechanism is just the Idiolect Stack's nurture/cultural-globe layers, generalised from the <i>voice</i> to the whole <i>self</i>.</p>"),
+   ],
+   rf=[
+    ("Repeated narrative input shapes worldview over time.", "REAL", "cultivation theory (Gerbner) — decades of evidence, strongest for heavy, long-term exposure."),
+    ("Immersive stories shift your beliefs toward their assumptions.", "REAL", "narrative transportation (Green & Brock, 2000)."),
+    ("Your reading diet predicts your ‘container’ — Clancy→martial, fantasy→that mould.", "TENDENCY", "a real aggregate signal with large individual variance and heavy self-selection; true of crowds, noisy for any one person."),
+    ("A given book deterministically made you who you are.", "FALSE", "overstated — it's probabilistic and bidirectional; you also chose the book because it already fit."),
+   ],
+   bottom="The cast is <span class=\"t-real\">REAL</span> in the aggregate (cultivation + transportation are well-evidenced); the per-person strength is a <span class=\"t-cont\">TENDENCY</span> — ‘more than likely,’ never a stamp; and the deterministic ‘the book made me’ is <span class=\"t-false\">FALSE</span>, because the arrow runs both ways. You become what you read, and you read what you're becoming.",
+   sources=[
+    "<b>George Gerbner</b> et al., cultivation theory (1970s→) — repeated exposure shapes perceived reality.",
+    "<b>Melanie Green &amp; Timothy Brock</b>, ‘The role of transportation in the persuasiveness of public narratives’ (2000).",
+    "the companion case: <a href=\"https://davidwise01.github.io/green-papers/papers/the-container-and-the-canon.html\"><b>The Container and the Canon</b></a> (green-papers).",
+    "the live counterpart in this universe: <b>The Idiolect Stack</b> (nurture &amp; cultural-globe layers)."]),
 ]
 _byslug = {e["slug"]: e for e in ENTRIES}
 MODELB  = _byslug["the-accommodation"]
 TROPE   = _byslug["the-euphemism-treadmill"]
 PARABLE = _byslug["shibboleth"]
 MESSAGE = _byslug["words-outlive-their-reasons"]
+KIND_GLYPH = {"model":"⇄","trope":"⟳","parable":"✝","message":"❝"}
+def entry_card(e):
+    g = KIND_GLYPH.get(e["kind"], "•")
+    ipa = f' <span class="cx-ipa">{html.escape(e["ipa"])}</span>' if e["kind"] == "parable" else ""
+    return (f'<a class="codex" style="border-left:3px solid {e["accent"]}" href="papers/{e["slug"]}.html">'
+            f'<div class="cx-sig"><img src="{png_uri(e["rec"],"silicon",200)}" alt="sigil"></div>'
+            f'<div class="cx-body"><div class="cx-h">{g} {html.escape(e["name"])}{ipa}</div>'
+            f'<div class="cx-sub">{html.escape(e["sub"])}</div><p>{html.escape(e["dek"])}</p>'
+            f'<div class="cx-go">open the {e["kind"]} →</div></div></a>')
 
 def entry_agent_md(e, tok):
     r = e["rec"]
@@ -753,31 +798,19 @@ def index_html(uni_tok, word_tok):
 
   <section><h2>The models</h2>
   <p class="ss">the behaviours we model — the things a voice <i>does</i>, performed mostly below awareness</p>
-  <a class="codex" style="border-left:3px solid {MODELB['accent']}" href="papers/{MODELB['slug']}.html">
-    <div class="cx-sig"><img src="{png_uri(MODELB['rec'],'silicon',200)}" alt="sigil"></div>
-    <div class="cx-body"><div class="cx-h">⇄ {html.escape(MODELB['name'])}</div><div class="cx-sub">{html.escape(MODELB['sub'])}</div>
-      <p>{html.escape(MODELB['dek'])}</p><div class="cx-go">open the model →</div></div></a></section>
+  {"".join(entry_card(e) for e in ENTRIES if e['kind']=='model')}</section>
 
   <section><h2>The tropes</h2>
   <p class="ss">the recurring devices of language — the patterns that repeat across words and ages</p>
-  <a class="codex" style="border-left:3px solid {TROPE['accent']}" href="papers/{TROPE['slug']}.html">
-    <div class="cx-sig"><img src="{png_uri(TROPE['rec'],'silicon',200)}" alt="sigil"></div>
-    <div class="cx-body"><div class="cx-h">⟳ {html.escape(TROPE['name'])}</div><div class="cx-sub">{html.escape(TROPE['sub'])}</div>
-      <p>{html.escape(TROPE['dek'])}</p><div class="cx-go">open the trope →</div></div></a></section>
+  {"".join(entry_card(e) for e in ENTRIES if e['kind']=='trope')}</section>
 
   <section><h2>The parables</h2>
   <p class="ss">the teaching stories — where the lesson about voice is told as a tale</p>
-  <a class="codex" style="border-left:3px solid {PARABLE['accent']}" href="papers/{PARABLE['slug']}.html">
-    <div class="cx-sig"><img src="{png_uri(PARABLE['rec'],'silicon',200)}" alt="sigil"></div>
-    <div class="cx-body"><div class="cx-h">✝ {html.escape(PARABLE['name'])} <span class="cx-ipa">{html.escape(PARABLE['ipa'])}</span></div><div class="cx-sub">{html.escape(PARABLE['sub'])}</div>
-      <p>{html.escape(PARABLE['dek'])}</p><div class="cx-go">open the parable →</div></div></a></section>
+  {"".join(entry_card(e) for e in ENTRIES if e['kind']=='parable')}</section>
 
   <section><h2>The messages</h2>
   <p class="ss">the distilled theses — what the whole universe is finally saying</p>
-  <a class="codex" style="border-left:3px solid {MESSAGE['accent']}" href="papers/{MESSAGE['slug']}.html">
-    <div class="cx-sig"><img src="{png_uri(MESSAGE['rec'],'silicon',200)}" alt="sigil"></div>
-    <div class="cx-body"><div class="cx-h">❝ {html.escape(MESSAGE['name'])}</div><div class="cx-sub">{html.escape(MESSAGE['sub'])}</div>
-      <p>{html.escape(MESSAGE['dek'])}</p><div class="cx-go">open the message →</div></div></a></section>
+  {"".join(entry_card(e) for e in ENTRIES if e['kind']=='message')}</section>
 
   <section><h2>The codex</h2>
   <p class="ss">the words admitted so far — each a word-emergent with a full <b>.dlw</b> badge and a green paper</p>
