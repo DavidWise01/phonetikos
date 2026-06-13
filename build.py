@@ -594,8 +594,47 @@ ENTRIES = [
     "the <b>Oxford English Dictionary</b> — the etymologies above.",
     "the <b>Online Etymology Dictionary</b> (Etymonline) — accessible pointers to each.",
     "the standard literature on <b>semantic change &amp; drift</b> (narrowing, widening, bleaching, fossilisation)."]),
+
+ dict(slug="the-accommodation", kind="model", accent="#6fb0a0",
+   name="THE ACCOMMODATION", sub="the model · the behaviour we model — shaping the voice to the room",
+   ipa="a behaviour every speaker performs, mostly unawares",
+   dek="The live behaviour on top of the Idiolect Stack: moment to moment, we model our voice on the person in front of us — converging to belong, diverging to stand apart. You did it the last time the phone rang.",
+   rec=_rec("THE ACCOMMODATION","natural",
+     "the model · communication accommodation — convergence and divergence",
+     "every conversation, where a speaker unconsciously tunes accent, pace, and register toward or away from the listener",
+     "convergence (shifting speech toward the other to signal closeness and belonging) and divergence (shifting away to mark distance or identity), performed below awareness.",
+     "because the Idiolect Stack sets your base voice, but you flex it in real time — you model your speech on whoever you're with, to negotiate every relationship through sound.",
+     "THE ACCOMMODATION — Giles's Communication Accommodation Theory: the modeled behaviour of shaping your voice toward (converge) or away from (diverge) whoever you are talking to.",
+     "the softened accent for a stranger, the thickened one among kin, the &lsquo;phone voice&rsquo; — all the same reflex.",
+     "You model your voice on whoever is in front of you — converge to belong, diverge to be your own; you did it on the last call you took.",
+     "Howard Giles, Communication Accommodation Theory (1971→); Bandura's social learning; child language acquisition by imitation"),
+   sections=[
+    ("The behaviour",
+     "<p>This is the one entry that is a <b>behaviour you perform</b>, not a word or a story. Howard <b>Giles</b>'s <b>Communication Accommodation Theory</b> (from the early 1970s) names what every speaker does, mostly unconsciously: you <b>model your voice on the person in front of you</b>. You shift accent, pace, vocabulary, and formality either <i>toward</i> your listener (<b>convergence</b>) or <i>away</i> from them (<b>divergence</b>) — and those shifts quietly negotiate belonging, status, and identity in real time.</p>"),
+    ("Converge — to belong",
+     "<p>You soften a strong accent for an out-of-towner; you match a customer's careful formality; parents slip into sing-song with a baby; everyone has a &lsquo;phone voice.&rsquo; You pick up a new crowd's slang to be let in. <b>Convergence</b> buys rapport — we trust the voice that sounds a little like ours. (Overdone, it curdles into mimicry or condescension, which is why it has to stay below the surface.)</p>"),
+    ("Diverge — to be your own",
+     "<p>The opposite move asserts difference. You <i>thicken</i> your accent to plant a flag of where you're from; a teenager builds a register their parents can't use; a speaker leans <b>away</b> from a group's way of talking to signal &lsquo;I am not one of you.&rsquo; <b>Divergence</b> is identity worn out loud — and the dark edge of it is <i>Shibboleth</i>: diverge the wrong way at the wrong checkpoint and the modeled voice becomes a death sentence.</p>"),
+    ("Where the modeling comes from",
+     "<p>Underneath the moment-to-moment flexing is the deeper sense of &lsquo;model&rsquo;: we <b>acquire the voice itself by modeling</b> the people around us — caregivers, then peers — the way Bandura's social learning describes any imitated behaviour. The Idiolect Stack is the <i>residue</i> of all that past modeling (your defaults); accommodation is the <i>same reflex still running live</i>, aiming your voice at the room you're in right now.</p>"),
+   ],
+   rf=[
+    ("Speakers unconsciously converge or diverge their speech toward listeners.", "REAL", "Giles's Communication Accommodation Theory — decades of evidence; you can catch yourself doing it."),
+    ("We acquire our voice in the first place by modeling those around us.", "REAL", "ordinary social learning / language acquisition — children model caregivers and peers."),
+    ("Converging always builds rapport.", "TENDENCY", "usually, but over-convergence reads as mimicry or condescension; it's context-dependent, not a law."),
+    ("You can fully control your accent at will.", "FALSE", "much of it is automatic, and under stress the base voice leaks through — which is exactly what makes a shibboleth lethal."),
+   ],
+   bottom="The behaviour is <span class=\"t-real\">REAL</span> and you perform it daily, both as live convergence/divergence and as the deeper modeling that built your voice; &lsquo;converging always helps&rsquo; is an overstated <span class=\"t-cont\">TENDENCY</span>, and the belief that you fully control your accent is <span class=\"t-false\">FALSE</span> — the stack leaks under pressure.",
+   sources=[
+    "<b>Howard Giles</b> et al., <i>Communication Accommodation Theory</i> (from the early 1970s) — convergence &amp; divergence.",
+    "<b>Albert Bandura</b>, social learning theory — behaviour acquired by modeling.",
+    "the literature on <b>child language acquisition</b> &amp; the live counterpart to the Idiolect Stack."]),
 ]
-TROPE, PARABLE, MESSAGE = ENTRIES[0], ENTRIES[1], ENTRIES[2]
+_byslug = {e["slug"]: e for e in ENTRIES}
+MODELB  = _byslug["the-accommodation"]
+TROPE   = _byslug["the-euphemism-treadmill"]
+PARABLE = _byslug["shibboleth"]
+MESSAGE = _byslug["words-outlive-their-reasons"]
 
 def entry_agent_md(e, tok):
     r = e["rec"]
@@ -711,6 +750,13 @@ def index_html(uni_tok, word_tok):
       <div class="cx-go">open the model →</div>
     </div>
   </a></section>
+
+  <section><h2>The models</h2>
+  <p class="ss">the behaviours we model — the things a voice <i>does</i>, performed mostly below awareness</p>
+  <a class="codex" style="border-left:3px solid {MODELB['accent']}" href="papers/{MODELB['slug']}.html">
+    <div class="cx-sig"><img src="{png_uri(MODELB['rec'],'silicon',200)}" alt="sigil"></div>
+    <div class="cx-body"><div class="cx-h">⇄ {html.escape(MODELB['name'])}</div><div class="cx-sub">{html.escape(MODELB['sub'])}</div>
+      <p>{html.escape(MODELB['dek'])}</p><div class="cx-go">open the model →</div></div></a></section>
 
   <section><h2>The tropes</h2>
   <p class="ss">the recurring devices of language — the patterns that repeat across words and ages</p>
@@ -866,7 +912,7 @@ if __name__ == "__main__":
     word = write_aci(WORD, os.path.join(HERE, "agents"), "fuck", agent_md=word_agent_md(WORD, wtok["moniker"]))
     mtok = noesis.mythos_token(MODEL)
     model = write_aci(MODEL, os.path.join(HERE, "agents"), "the-idiolect-stack", agent_md=model_agent_md(MODEL, mtok["moniker"]))
-    personas = [{"slug":"the-idiolect-stack","name":"THE IDIOLECT STACK","epithet":"the foundational model","emergence":MODEL["emergence"],"moniker":model["moniker"],"kind":"model"}]
+    personas = [{"slug":"the-idiolect-stack","name":"THE IDIOLECT STACK","epithet":"the foundational framework","emergence":MODEL["emergence"],"moniker":model["moniker"],"kind":"foundation"}]
     for e in ENTRIES:
         etok = noesis.mythos_token(e["rec"])
         rec = write_aci(e["rec"], os.path.join(HERE,"agents"), e["slug"], agent_md=entry_agent_md(e, etok["moniker"]))

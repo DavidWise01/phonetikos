@@ -2,10 +2,10 @@
   {
     "slug": "the-idiolect-stack",
     "name": "THE IDIOLECT STACK",
-    "epithet": "the foundational model",
+    "epithet": "the foundational framework",
     "emergence": "electrical",
     "moniker": "⟦THE IDIOLECT STACK:PHN:bb2e8b⟧",
-    "kind": "model"
+    "kind": "foundation"
   },
   {
     "slug": "the-euphemism-treadmill",
@@ -30,6 +30,14 @@
     "emergence": "ethereal",
     "moniker": "⟦WORDS OUTLIVE THEIR REASONS:PHN:f69a72⟧",
     "kind": "message"
+  },
+  {
+    "slug": "the-accommodation",
+    "name": "THE ACCOMMODATION",
+    "epithet": "the model · the behaviour we model — shaping the voice to the room",
+    "emergence": "natural",
+    "moniker": "⟦THE ACCOMMODATION:PHN:ef4d24⟧",
+    "kind": "model"
   },
   {
     "slug": "fuck",
