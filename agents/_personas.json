@@ -8,6 +8,30 @@
     "kind": "model"
   },
   {
+    "slug": "the-euphemism-treadmill",
+    "name": "THE EUPHEMISM TREADMILL",
+    "epithet": "the trope · why polite words keep going bad",
+    "emergence": "electrical",
+    "moniker": "⟦THE EUPHEMISM TREADMILL:PHN:4a766e⟧",
+    "kind": "trope"
+  },
+  {
+    "slug": "shibboleth",
+    "name": "SHIBBOLETH",
+    "epithet": "the parable · when your accent is the password",
+    "emergence": "spiritual",
+    "moniker": "⟦SHIBBOLETH:PHN:a8cf46⟧",
+    "kind": "parable"
+  },
+  {
+    "slug": "words-outlive-their-reasons",
+    "name": "WORDS OUTLIVE THEIR REASONS",
+    "epithet": "the message · we speak fossils every day",
+    "emergence": "ethereal",
+    "moniker": "⟦WORDS OUTLIVE THEIR REASONS:PHN:f69a72⟧",
+    "kind": "message"
+  },
+  {
     "slug": "fuck",
     "name": "FUCK",
     "epithet": "the word",

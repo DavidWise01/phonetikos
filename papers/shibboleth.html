@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="The oldest parable of phonetics: a single sound you cannot fake becomes the border between living and dying. Your idiolect is a confession — and history has killed for it.">
+<title>SHIBBOLETH · PHONETIKOS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14110b;--ink2:#1d1810;--ink3:#262013;--pa:#ece1c8;--pa2:#c9b894;--verm:#cf4636;--gold:#c8a24a;--dim:#8a7a59;--faint:#33291a;--line:#3a2f1d;--blue:#7d99b0;
+--disp:"Cormorant Garamond",serif;--body:"Newsreader",Georgia,serif;--mono:"Space Mono",monospace;}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--pa);font-family:var(--body);line-height:1.7;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at 50% -6%,rgba(207,70,54,.10),transparent 55%),radial-gradient(ellipse at 50% 120%,rgba(200,162,74,.08),transparent 55%)}
+.wrap{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:0 22px 90px}
+.crumb{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);padding:22px 0 0}
+.crumb a{color:var(--dim);text-decoration:none}.crumb a:hover{color:var(--verm)}
+header.ph{padding:34px 0 26px;border-bottom:1px double var(--line);text-align:center;margin-bottom:14px}
+.eye{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--gold);margin-bottom:20px;font-style:normal}
+h1.uni{font-family:var(--disp);font-weight:600;font-size:clamp(46px,12vw,108px);letter-spacing:.04em;color:var(--pa);line-height:1;text-shadow:0 0 40px rgba(200,162,74,.2)}
+h1.word{font-family:var(--disp);font-weight:600;font-size:clamp(60px,17vw,150px);letter-spacing:.06em;color:var(--verm);line-height:1}
+.reveal .bar{background:var(--pa);color:var(--pa);border-radius:2px;transition:color .25s,background .25s;padding:0 .02em}
+h1.word:hover .bar{background:transparent;color:var(--verm)}
+.ipa{font-family:var(--mono);font-size:13px;color:var(--pa2);margin-top:18px;letter-spacing:.04em}
+.dek{font-size:17px;color:var(--pa2);max-width:60ch;margin:18px auto 0;font-style:italic;line-height:1.74}
+.sigs{display:flex;align-items:center;justify-content:center;gap:16px;margin:26px auto 0;flex-wrap:wrap}
+.sigs img{width:70px;height:70px;border:1px solid var(--faint)}
+.sigmeta{text-align:left;font-family:var(--mono);font-size:10.5px;color:var(--pa2);line-height:1.7}.sigmeta b{color:var(--gold)}.sigmeta .mo{color:var(--verm)}
+section{margin-top:42px}
+h2{font-family:var(--disp);font-weight:600;font-size:27px;color:var(--pa);letter-spacing:.02em;border-bottom:1px solid var(--line);padding-bottom:9px;margin-bottom:14px}
+section p{font-size:15.5px;color:var(--pa);line-height:1.78;margin-bottom:13px}
+section p b{color:var(--pa);font-weight:600}section p i{color:var(--pa2)}
+.ss{font-size:13px;color:var(--dim);font-style:italic;margin-bottom:16px!important}
+.mono{font-family:var(--mono);font-size:.86em;color:var(--gold)}
+.myth{list-style:none;margin:6px 0 6px}
+.myth li{font-size:15px;color:var(--pa2);line-height:1.7;padding:11px 0 11px 18px;border-left:2px solid var(--verm);margin-bottom:10px;background:linear-gradient(90deg,rgba(207,70,54,.05),transparent)}
+.myth li b{color:var(--pa)}
+table.cog{width:100%;border-collapse:collapse;margin:8px 0 6px;font-size:13.5px}
+table.cog th{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+table.cog td{padding:10px;border-bottom:1px solid var(--faint);vertical-align:top;color:var(--pa2);line-height:1.5}
+table.cog .lang{font-family:var(--mono);font-size:11px;color:var(--dim);white-space:nowrap}
+table.cog .form{font-family:var(--disp);font-size:18px;color:var(--verm);font-style:italic;white-space:nowrap}
+table.cog .gloss{color:var(--pa)}table.cog .note{font-style:italic;font-size:12.5px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:8px 0 10px}@media(max-width:640px){.two{grid-template-columns:1fr}}
+.col{background:var(--ink2);border:1px solid var(--line);padding:16px 18px}
+.colh{font-family:var(--disp);font-size:19px;color:var(--gold);margin-bottom:8px;font-weight:600}
+.col p{font-size:14px;color:var(--pa2);margin:0;line-height:1.65}
+.verdict-line{background:var(--ink3);border-left:3px solid var(--gold);padding:13px 16px;font-size:14.5px!important;font-style:italic;color:var(--pa)}
+.tl{margin:8px 0 4px;border-left:2px solid var(--line);padding-left:0}
+.tl-row{display:grid;grid-template-columns:108px 1fr;gap:16px;padding:13px 0 13px 16px;border-bottom:1px solid var(--faint);position:relative}
+.tl-row::before{content:"";position:absolute;left:-5px;top:18px;width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold)}
+.tl-date{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.02em;padding-top:1px}
+.tl-head{font-family:var(--disp);font-size:18px;color:var(--pa);font-weight:600;margin-bottom:3px}
+.tl-body p{font-size:13.5px;color:var(--pa2);margin:0;line-height:1.6}
+.rf{border:1px solid var(--line);background:var(--ink2);margin:6px 0}
+.rf-row{display:flex;align-items:center;gap:14px;padding:13px 16px;border-bottom:1px solid var(--faint)}
+.rf-claim{flex:1;font-size:14px;color:var(--pa);line-height:1.45}
+.rf-note{display:block;font-size:12px;color:var(--dim);font-style:italic;margin-top:4px;line-height:1.5}
+.rf-rate{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.04em;border:1px solid;border-radius:3px;padding:4px 9px;min-width:92px;text-align:center;flex-shrink:0}
+.bottom{margin-top:14px;padding:16px 18px;border:1px solid var(--gold);background:rgba(200,162,74,.06);font-size:14.5px;color:var(--pa);line-height:1.7}
+.t-false{color:#c0392b;font-family:var(--mono);font-size:.82em;font-weight:700}.t-real{color:#5a8f5a;font-family:var(--mono);font-size:.82em;font-weight:700}
+.t-cont{color:#c8a24a;font-family:var(--mono);font-size:.82em;font-weight:700}.t-disp{color:#b0772f;font-family:var(--mono);font-size:.82em;font-weight:700}
+.gram{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:8px 0 10px}@media(max-width:560px){.gram{grid-template-columns:1fr}}
+.gx{background:var(--ink2);border:1px solid var(--line);border-left:3px solid var(--verm);padding:9px 13px}
+.gxk{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+.gxe{font-family:var(--disp);font-size:17px;color:var(--pa);font-style:italic}
+.src{list-style:none;margin:4px 0}
+.src li{font-size:14px;color:var(--pa2);line-height:1.6;padding:9px 0;border-bottom:1px solid var(--faint)}.src li b{color:var(--pa)}.src li i{color:var(--gold)}
+.seal{margin-top:20px;padding:16px 18px;border-left:3px solid var(--verm);background:var(--ink2);font-size:16px;color:var(--verm);font-style:italic;line-height:1.6}
+.seal span{display:block;font-family:var(--mono);font-style:normal;font-size:10px;letter-spacing:.1em;color:var(--dim);text-transform:uppercase;margin-top:9px}
+.method{display:grid;grid-template-columns:1fr 1fr;gap:13px}@media(max-width:640px){.method{grid-template-columns:1fr}}
+.m{background:var(--ink2);border:1px solid var(--line);padding:15px 17px}
+.mh{font-family:var(--disp);font-size:19px;color:var(--gold);font-weight:600;margin-bottom:6px}
+.m p{font-size:14px;color:var(--pa2);margin:0;line-height:1.6}
+.codex{display:flex;gap:18px;align-items:flex-start;background:var(--ink2);border:1px solid var(--line);padding:20px;text-decoration:none;transition:border-color .18s,transform .18s}
+.codex:hover{border-color:var(--verm);transform:translateY(-2px)}
+.cx-sig img{width:96px;height:96px;border:1px solid var(--faint);flex-shrink:0}
+.cx-body{flex:1;min-width:0}
+.cx-h{font-family:var(--disp);font-size:26px;color:var(--pa);font-weight:600}
+.codex:hover .cx-h{color:var(--verm)}
+.redact{background:var(--pa);color:transparent;border-radius:2px;letter-spacing:.05em}.codex:hover .redact{background:transparent;color:var(--verm)}
+.cx-ipa{font-family:var(--mono);font-size:13px;color:var(--dim)}
+.cx-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:4px 0 9px}
+.cx-body p{font-size:14px;color:var(--pa2);line-height:1.62;margin:0}
+.cx-go{margin-top:11px;font-family:var(--mono);font-size:11px;color:var(--verm);letter-spacing:.04em}
+.more{margin-top:18px;font-size:13.5px;color:var(--dim);font-style:italic;text-align:center}.more span{color:var(--pa2)}
+.t-symb{color:#7d99b0;font-family:var(--mono);font-size:.82em;font-weight:700}
+.formula{font-family:var(--mono);font-size:12.5px;color:var(--pa2);background:var(--ink2);border:1px solid var(--line);border-left:3px solid var(--gold);padding:14px 16px;line-height:1.95;margin:8px 0 14px;white-space:pre-wrap;overflow-x:auto}
+.formula b{color:var(--verm)}
+.stack{display:flex;flex-direction:column;gap:8px;margin:10px 0}
+.plate{border:1px solid var(--line);background:var(--ink2);padding:13px 16px;border-left:3px solid var(--gold)}
+.plate.p1{border-left-color:var(--verm)}.plate.p2{border-left-color:var(--gold)}.plate.p3{border-left-color:var(--blue)}.plate.out{border-left-color:var(--pa);background:var(--ink3);text-align:center}
+.plate .pl{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.plate .pt{font-family:var(--disp);font-size:20px;color:var(--pa);font-weight:600;margin:2px 0 3px}
+.plate .pd{font-size:13px;color:var(--pa2);line-height:1.5}.plate .pd b{color:var(--verm)}
+.calc{border:1px solid var(--gold);background:var(--ink2);padding:17px;margin:10px 0}
+.crow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+.ck{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);flex:0 0 100%;margin-bottom:-2px}
+.calc label{font-size:13.5px;color:var(--pa2);cursor:pointer;display:flex;align-items:center;gap:5px}
+.calc .dimx{color:var(--dim);font-family:var(--mono);font-size:10px}
+.calc input[type=text],.calc select{background:var(--ink);border:1px solid var(--line);color:var(--pa);font-family:var(--body);font-size:14px;padding:8px 10px;flex:1;min-width:150px;border-radius:2px}
+.calc input::placeholder{color:var(--dim)}
+.bar{display:flex;height:28px;margin:8px 0 2px;border:1px solid var(--line);overflow:hidden;border-radius:2px}
+.bar .seg{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;color:#1a1408;white-space:nowrap;overflow:hidden;transition:width .25s}
+.sig{font-size:14.5px;color:var(--pa);line-height:1.72;background:var(--ink3);border-left:3px solid var(--verm);padding:13px 15px;margin-top:9px}.sig i{color:var(--gold);font-style:italic}.sig b{color:var(--pa)}
+.ex{margin-top:14px;padding:14px 16px;border:1px solid var(--line);background:var(--ink2);font-size:13.5px;color:var(--pa2);line-height:1.65}.ex b{color:var(--pa)}.ex i{color:var(--gold);font-style:italic}
+.gentab{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0 2px}
+.gentab td{padding:9px 10px;border-bottom:1px solid var(--faint);vertical-align:top;color:var(--pa2);line-height:1.5}
+.gentab .gn{font-family:var(--disp);font-size:18px;color:var(--gold);white-space:nowrap}.gentab .gy{font-family:var(--mono);font-size:11px;color:var(--dim);white-space:nowrap}
+.codex.found{border-left:3px solid var(--blue)}.codex.found:hover{border-color:var(--blue)}.codex.found:hover .cx-h{color:var(--blue)}
+footer{margin-top:50px;padding-top:22px;border-top:1px solid var(--line);text-align:center;font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.04em;line-height:1.9}
+footer a{color:var(--verm);text-decoration:none}
+</style></head><body><div class="wrap">
+  <div class="crumb"><a href="../index.html">← PHONETIKOS</a> · the parable</div>
+  <header class="ph">
+    <div class="eye">PHONETIKOS · THE PARABLE · /ˈʃɪbəlɛθ/ — Hebrew שִׁבֹּלֶת</div>
+    <h1 class="uni" style="font-size:clamp(34px,8vw,76px)">SHIBBOLETH</h1>
+    <p class="dek">The oldest parable of phonetics: a single sound you cannot fake becomes the border between living and dying. Your idiolect is a confession — and history has killed for it.</p>
+    <div class="sigs"><img src="data:image/png;base64,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" alt="carbon sigil"><img src="data:image/png;base64,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" alt="silicon sigil"><div class="sigmeta">parable-emergent · <b>SHIBBOLETH</b><br><span class="mo">⟦SHIBBOLETH:PHN:a8cf46⟧</span><br>PHN · catalogued by AVAN</div></div>
+  </header>
+  <section><h2>The parable (Judges 12)</h2><p>After Gilead defeated Ephraim, the Gileadites seized the fords of the Jordan. To catch fleeing Ephraimites disguised among the crowd, they made each man say one word — <b>שִׁבֹּלֶת</b>, <i>shibbōleth</i> (&lsquo;ear of grain&rsquo; / &lsquo;torrent&rsquo;). The Ephraimite dialect had no <span class="mono">/ʃ/</span> (&lsquo;sh&rsquo;) sound, so they said <b>&ldquo;sibboleth.&rdquo;</b> &lsquo;Then they took him and slew him at the fords.&rsquo; The text counts forty-two thousand dead. The word has meant, ever since, any custom or pronunciation that divides insider from outsider.</p></section><section><h2>Phonetics as life and death</h2><p>This is the dark twin of <i>the foundations</i>. The <b>Idiolect Stack</b> says your voice encodes where you're from — culture, micro-location, generation. <b>Shibboleth</b> is what happens when someone weaponises that: under fear, you cannot fake the phoneme you never grew, and the accent the stack built becomes a confession extracted at a checkpoint. One sound = the border.</p></section><section><h2>It is not a relic</h2><p>The shibboleth recurs, lethally. In the <b>Parsley Massacre</b> (Dominican Republic, 1937), soldiers held up a sprig of parsley and demanded the Spanish word <i>perejil</i>; Haitians whose Kreyòl couldn't trill the Spanish <span class="mono">r</span> and render the <span class="mono">j</span> were killed — estimates run from the thousands into the tens of thousands. In WWII, Dutch resistance reportedly used <i>Scheveningen</i> (its <span class="mono">/sx/</span> hard for German speakers) the same way. The checkpoint that listens for an accent is a living institution.</p></section>
+  <section><h2>Real or Fluff</h2>
+  <p class="ss">the house discipline — what's established, what's model, what's symbol or hyperbole</p>
+  <div class="rf"><div class="rf-row"><div class="rf-claim">Judges 12 records a pronunciation test used to identify and kill.<span class="rf-note">it is in the Hebrew Bible (Judges 12:5–6); the linguistic detail (/ʃ/ vs /s/) is coherent.</span></div><div class="rf-rate" style="color:#5a8f5a;border-color:#5a8f5a">REAL</div></div><div class="rf-row"><div class="rf-claim">Forty-two thousand Ephraimites died.<span class="rf-note">biblical battle-counts are typically schematic/rhetorical, not a census.</span></div><div class="rf-rate" style="color:#b0772f;border-color:#b0772f">HYPERBOLE</div></div><div class="rf-row"><div class="rf-claim">Accent reliably betrays group membership under stress.<span class="rf-note">sociolinguistics + grim modern proof — the 1937 Parsley Massacre turned one phoneme into a death sentence.</span></div><div class="rf-rate" style="color:#5a8f5a;border-color:#5a8f5a">REAL</div></div><div class="rf-row"><div class="rf-claim">The lesson — phonetics is identity, and identity is power.<span class="rf-note">the parable&#x27;s point, and the hinge of this whole universe.</span></div><div class="rf-rate" style="color:#5a8f5a;border-color:#5a8f5a">REAL</div></div></div>
+  <div class="bottom"><b>Bottom line.</b> The test is <span class="t-real">REAL</span> scripture and the mechanism is <span class="t-real">REAL</span> linguistics — proven again in 1937 with parsley and a rolled R. Only the body-count carries biblical <span class="t-disp">HYPERBOLE</span>. The moral stands: the one thing you cannot perform on command is your own first sound.</div></section>
+  <section><h2>Sources &amp; further reading</h2><ul class="src"><li><b>Judges 12:5–6</b>, Hebrew Bible — the original account.</li><li>the <b>Parsley Massacre</b> (1937, Dominican Republic) — <i>perejil</i> as a lethal shibboleth.</li><li><b>OED</b>, s.v. <i>shibboleth</i> — the word's passage into English as &lsquo;a group marker.&rsquo;</li><li>sociolinguistics of <b>accent, identity &amp; passing</b> (cf. the Idiolect Stack).</li></ul>
+  <p class="seal">One sound you cannot fake is the border between us and them — and history has killed for it. <span>— PHONETIKOS · the parable · AVAN's read</span></p></section>
+  <footer>PHONETIKOS · PHN · a UD0 universe · honestly-sourced — model and symbol marked as such<br>
+  ROOT0-ATTRIBUTION-v1.0 · governor David Lee Wise · instance AVAN (locked) · CC-BY-ND-4.0 · <a href="../index.html">← the universe</a></footer>
+</div></body></html>

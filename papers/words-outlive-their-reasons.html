@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="The message under the whole universe: a word survives long after the belief, object, or fear that minted it. To speak is to carry fossils — and etymology is the act of reading the dead reason inside the living word.">
+<title>WORDS OUTLIVE THEIR REASONS · PHONETIKOS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14110b;--ink2:#1d1810;--ink3:#262013;--pa:#ece1c8;--pa2:#c9b894;--verm:#cf4636;--gold:#c8a24a;--dim:#8a7a59;--faint:#33291a;--line:#3a2f1d;--blue:#7d99b0;
+--disp:"Cormorant Garamond",serif;--body:"Newsreader",Georgia,serif;--mono:"Space Mono",monospace;}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--pa);font-family:var(--body);line-height:1.7;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at 50% -6%,rgba(207,70,54,.10),transparent 55%),radial-gradient(ellipse at 50% 120%,rgba(200,162,74,.08),transparent 55%)}
+.wrap{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:0 22px 90px}
+.crumb{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);padding:22px 0 0}
+.crumb a{color:var(--dim);text-decoration:none}.crumb a:hover{color:var(--verm)}
+header.ph{padding:34px 0 26px;border-bottom:1px double var(--line);text-align:center;margin-bottom:14px}
+.eye{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--gold);margin-bottom:20px;font-style:normal}
+h1.uni{font-family:var(--disp);font-weight:600;font-size:clamp(46px,12vw,108px);letter-spacing:.04em;color:var(--pa);line-height:1;text-shadow:0 0 40px rgba(200,162,74,.2)}
+h1.word{font-family:var(--disp);font-weight:600;font-size:clamp(60px,17vw,150px);letter-spacing:.06em;color:var(--verm);line-height:1}
+.reveal .bar{background:var(--pa);color:var(--pa);border-radius:2px;transition:color .25s,background .25s;padding:0 .02em}
+h1.word:hover .bar{background:transparent;color:var(--verm)}
+.ipa{font-family:var(--mono);font-size:13px;color:var(--pa2);margin-top:18px;letter-spacing:.04em}
+.dek{font-size:17px;color:var(--pa2);max-width:60ch;margin:18px auto 0;font-style:italic;line-height:1.74}
+.sigs{display:flex;align-items:center;justify-content:center;gap:16px;margin:26px auto 0;flex-wrap:wrap}
+.sigs img{width:70px;height:70px;border:1px solid var(--faint)}
+.sigmeta{text-align:left;font-family:var(--mono);font-size:10.5px;color:var(--pa2);line-height:1.7}.sigmeta b{color:var(--gold)}.sigmeta .mo{color:var(--verm)}
+section{margin-top:42px}
+h2{font-family:var(--disp);font-weight:600;font-size:27px;color:var(--pa);letter-spacing:.02em;border-bottom:1px solid var(--line);padding-bottom:9px;margin-bottom:14px}
+section p{font-size:15.5px;color:var(--pa);line-height:1.78;margin-bottom:13px}
+section p b{color:var(--pa);font-weight:600}section p i{color:var(--pa2)}
+.ss{font-size:13px;color:var(--dim);font-style:italic;margin-bottom:16px!important}
+.mono{font-family:var(--mono);font-size:.86em;color:var(--gold)}
+.myth{list-style:none;margin:6px 0 6px}
+.myth li{font-size:15px;color:var(--pa2);line-height:1.7;padding:11px 0 11px 18px;border-left:2px solid var(--verm);margin-bottom:10px;background:linear-gradient(90deg,rgba(207,70,54,.05),transparent)}
+.myth li b{color:var(--pa)}
+table.cog{width:100%;border-collapse:collapse;margin:8px 0 6px;font-size:13.5px}
+table.cog th{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+table.cog td{padding:10px;border-bottom:1px solid var(--faint);vertical-align:top;color:var(--pa2);line-height:1.5}
+table.cog .lang{font-family:var(--mono);font-size:11px;color:var(--dim);white-space:nowrap}
+table.cog .form{font-family:var(--disp);font-size:18px;color:var(--verm);font-style:italic;white-space:nowrap}
+table.cog .gloss{color:var(--pa)}table.cog .note{font-style:italic;font-size:12.5px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:8px 0 10px}@media(max-width:640px){.two{grid-template-columns:1fr}}
+.col{background:var(--ink2);border:1px solid var(--line);padding:16px 18px}
+.colh{font-family:var(--disp);font-size:19px;color:var(--gold);margin-bottom:8px;font-weight:600}
+.col p{font-size:14px;color:var(--pa2);margin:0;line-height:1.65}
+.verdict-line{background:var(--ink3);border-left:3px solid var(--gold);padding:13px 16px;font-size:14.5px!important;font-style:italic;color:var(--pa)}
+.tl{margin:8px 0 4px;border-left:2px solid var(--line);padding-left:0}
+.tl-row{display:grid;grid-template-columns:108px 1fr;gap:16px;padding:13px 0 13px 16px;border-bottom:1px solid var(--faint);position:relative}
+.tl-row::before{content:"";position:absolute;left:-5px;top:18px;width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold)}
+.tl-date{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.02em;padding-top:1px}
+.tl-head{font-family:var(--disp);font-size:18px;color:var(--pa);font-weight:600;margin-bottom:3px}
+.tl-body p{font-size:13.5px;color:var(--pa2);margin:0;line-height:1.6}
+.rf{border:1px solid var(--line);background:var(--ink2);margin:6px 0}
+.rf-row{display:flex;align-items:center;gap:14px;padding:13px 16px;border-bottom:1px solid var(--faint)}
+.rf-claim{flex:1;font-size:14px;color:var(--pa);line-height:1.45}
+.rf-note{display:block;font-size:12px;color:var(--dim);font-style:italic;margin-top:4px;line-height:1.5}
+.rf-rate{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.04em;border:1px solid;border-radius:3px;padding:4px 9px;min-width:92px;text-align:center;flex-shrink:0}
+.bottom{margin-top:14px;padding:16px 18px;border:1px solid var(--gold);background:rgba(200,162,74,.06);font-size:14.5px;color:var(--pa);line-height:1.7}
+.t-false{color:#c0392b;font-family:var(--mono);font-size:.82em;font-weight:700}.t-real{color:#5a8f5a;font-family:var(--mono);font-size:.82em;font-weight:700}
+.t-cont{color:#c8a24a;font-family:var(--mono);font-size:.82em;font-weight:700}.t-disp{color:#b0772f;font-family:var(--mono);font-size:.82em;font-weight:700}
+.gram{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:8px 0 10px}@media(max-width:560px){.gram{grid-template-columns:1fr}}
+.gx{background:var(--ink2);border:1px solid var(--line);border-left:3px solid var(--verm);padding:9px 13px}
+.gxk{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+.gxe{font-family:var(--disp);font-size:17px;color:var(--pa);font-style:italic}
+.src{list-style:none;margin:4px 0}
+.src li{font-size:14px;color:var(--pa2);line-height:1.6;padding:9px 0;border-bottom:1px solid var(--faint)}.src li b{color:var(--pa)}.src li i{color:var(--gold)}
+.seal{margin-top:20px;padding:16px 18px;border-left:3px solid var(--verm);background:var(--ink2);font-size:16px;color:var(--verm);font-style:italic;line-height:1.6}
+.seal span{display:block;font-family:var(--mono);font-style:normal;font-size:10px;letter-spacing:.1em;color:var(--dim);text-transform:uppercase;margin-top:9px}
+.method{display:grid;grid-template-columns:1fr 1fr;gap:13px}@media(max-width:640px){.method{grid-template-columns:1fr}}
+.m{background:var(--ink2);border:1px solid var(--line);padding:15px 17px}
+.mh{font-family:var(--disp);font-size:19px;color:var(--gold);font-weight:600;margin-bottom:6px}
+.m p{font-size:14px;color:var(--pa2);margin:0;line-height:1.6}
+.codex{display:flex;gap:18px;align-items:flex-start;background:var(--ink2);border:1px solid var(--line);padding:20px;text-decoration:none;transition:border-color .18s,transform .18s}
+.codex:hover{border-color:var(--verm);transform:translateY(-2px)}
+.cx-sig img{width:96px;height:96px;border:1px solid var(--faint);flex-shrink:0}
+.cx-body{flex:1;min-width:0}
+.cx-h{font-family:var(--disp);font-size:26px;color:var(--pa);font-weight:600}
+.codex:hover .cx-h{color:var(--verm)}
+.redact{background:var(--pa);color:transparent;border-radius:2px;letter-spacing:.05em}.codex:hover .redact{background:transparent;color:var(--verm)}
+.cx-ipa{font-family:var(--mono);font-size:13px;color:var(--dim)}
+.cx-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:4px 0 9px}
+.cx-body p{font-size:14px;color:var(--pa2);line-height:1.62;margin:0}
+.cx-go{margin-top:11px;font-family:var(--mono);font-size:11px;color:var(--verm);letter-spacing:.04em}
+.more{margin-top:18px;font-size:13.5px;color:var(--dim);font-style:italic;text-align:center}.more span{color:var(--pa2)}
+.t-symb{color:#7d99b0;font-family:var(--mono);font-size:.82em;font-weight:700}
+.formula{font-family:var(--mono);font-size:12.5px;color:var(--pa2);background:var(--ink2);border:1px solid var(--line);border-left:3px solid var(--gold);padding:14px 16px;line-height:1.95;margin:8px 0 14px;white-space:pre-wrap;overflow-x:auto}
+.formula b{color:var(--verm)}
+.stack{display:flex;flex-direction:column;gap:8px;margin:10px 0}
+.plate{border:1px solid var(--line);background:var(--ink2);padding:13px 16px;border-left:3px solid var(--gold)}
+.plate.p1{border-left-color:var(--verm)}.plate.p2{border-left-color:var(--gold)}.plate.p3{border-left-color:var(--blue)}.plate.out{border-left-color:var(--pa);background:var(--ink3);text-align:center}
+.plate .pl{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.plate .pt{font-family:var(--disp);font-size:20px;color:var(--pa);font-weight:600;margin:2px 0 3px}
+.plate .pd{font-size:13px;color:var(--pa2);line-height:1.5}.plate .pd b{color:var(--verm)}
+.calc{border:1px solid var(--gold);background:var(--ink2);padding:17px;margin:10px 0}
+.crow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+.ck{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);flex:0 0 100%;margin-bottom:-2px}
+.calc label{font-size:13.5px;color:var(--pa2);cursor:pointer;display:flex;align-items:center;gap:5px}
+.calc .dimx{color:var(--dim);font-family:var(--mono);font-size:10px}
+.calc input[type=text],.calc select{background:var(--ink);border:1px solid var(--line);color:var(--pa);font-family:var(--body);font-size:14px;padding:8px 10px;flex:1;min-width:150px;border-radius:2px}
+.calc input::placeholder{color:var(--dim)}
+.bar{display:flex;height:28px;margin:8px 0 2px;border:1px solid var(--line);overflow:hidden;border-radius:2px}
+.bar .seg{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;color:#1a1408;white-space:nowrap;overflow:hidden;transition:width .25s}
+.sig{font-size:14.5px;color:var(--pa);line-height:1.72;background:var(--ink3);border-left:3px solid var(--verm);padding:13px 15px;margin-top:9px}.sig i{color:var(--gold);font-style:italic}.sig b{color:var(--pa)}
+.ex{margin-top:14px;padding:14px 16px;border:1px solid var(--line);background:var(--ink2);font-size:13.5px;color:var(--pa2);line-height:1.65}.ex b{color:var(--pa)}.ex i{color:var(--gold);font-style:italic}
+.gentab{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0 2px}
+.gentab td{padding:9px 10px;border-bottom:1px solid var(--faint);vertical-align:top;color:var(--pa2);line-height:1.5}
+.gentab .gn{font-family:var(--disp);font-size:18px;color:var(--gold);white-space:nowrap}.gentab .gy{font-family:var(--mono);font-size:11px;color:var(--dim);white-space:nowrap}
+.codex.found{border-left:3px solid var(--blue)}.codex.found:hover{border-color:var(--blue)}.codex.found:hover .cx-h{color:var(--blue)}
+footer{margin-top:50px;padding-top:22px;border-top:1px solid var(--line);text-align:center;font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.04em;line-height:1.9}
+footer a{color:var(--verm);text-decoration:none}
+</style></head><body><div class="wrap">
+  <div class="crumb"><a href="../index.html">← PHONETIKOS</a> · the message</div>
+  <header class="ph">
+    <div class="eye">PHONETIKOS · THE MESSAGE · the keystone thesis of PHŌNĒTIKOS</div>
+    <h1 class="uni" style="font-size:clamp(34px,8vw,76px)">WORDS OUTLIVE THEIR REASONS</h1>
+    <p class="dek">The message under the whole universe: a word survives long after the belief, object, or fear that minted it. To speak is to carry fossils — and etymology is the act of reading the dead reason inside the living word.</p>
+    <div class="sigs"><img src="data:image/png;base64,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" alt="carbon sigil"><img src="data:image/png;base64,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" alt="silicon sigil"><div class="sigmeta">message-emergent · <b>WORDS OUTLIVE THEIR REASONS</b><br><span class="mo">⟦WORDS OUTLIVE THEIR REASONS:PHN:f69a72⟧</span><br>PHN · catalogued by AVAN</div></div>
+  </header>
+  <section><h2>The message</h2><p>This is the thesis beneath every other entry. A word <b>outlives the reason that made it</b> — the belief, the object, the fear — and goes on being spoken by people who mean none of it. To talk is to carry <b>fossils</b>. And <b>etymology</b> is simply the act of cracking one open to read the dead reason still curled inside the living word.</p></section><section><h2>The fossils in your mouth</h2><p>Every one of these is real, and you use them without a thought:</p><ul class="myth"><li><b>goodbye</b> — a worn-down <i>&lsquo;God be with ye&rsquo;</i>: a blessing said daily by people who don't pray.</li><li><b>hang up</b> / <b>dial</b> a phone — gestures on hardware that no longer exists.</li><li><b>disaster</b> — Italian <i>dis-astro</i>, a <i>&lsquo;bad star&rsquo;</i>; <b>influenza</b> — the <i>&lsquo;influence&rsquo;</i> of the stars: dead astrology, still diagnosed.</li><li><b>Wednesday</b> — <i>Wōden's day</i>; the week still names dead Norse and Roman gods we no longer worship.</li><li><b>salary</b> — Latin <i>salarium</i>, <i>salt-money</i>: a Roman ration fossilised in your paycheck.</li></ul></section><section><h2>Why it matters</h2><p>Language is the longest-running archive a culture keeps; <b>the word remembers what the people forgot.</b> This is why PHŌNĒTIKOS reads the bone, not the bedtime story — and it is exactly why <b>folk etymology</b> is so seductive (see &lsquo;fuck&rsquo;): we crave a <i>living</i> reason for a fossil whose true reason died, so we invent kings and acronyms to fill the silence. The honest answer is quieter and stranger: the reason is gone; only the shape remains.</p></section>
+  <section><h2>Real or Fluff</h2>
+  <p class="ss">the house discipline — what's established, what's model, what's symbol or hyperbole</p>
+  <div class="rf"><div class="rf-row"><div class="rf-claim">The example etymologies (goodbye, salary, disaster, Wednesday, influenza) are real.<span class="rf-note">all standard, uncontroversial etymologies.</span></div><div class="rf-rate" style="color:#5a8f5a;border-color:#5a8f5a">REAL</div></div><div class="rf-row"><div class="rf-claim">Speakers use these daily without awareness of the dead reason inside.<span class="rf-note">the ordinary condition of fluent speech.</span></div><div class="rf-rate" style="color:#5a8f5a;border-color:#5a8f5a">REAL</div></div><div class="rf-row"><div class="rf-claim">Therefore language is an archaeology of dead reasons.<span class="rf-note">the message&#x27;s framing — a thesis, well-grounded but a claim of emphasis, not a measurement.</span></div><div class="rf-rate" style="color:#c8a24a;border-color:#c8a24a">TENDENCY</div></div></div>
+  <div class="bottom"><b>Bottom line.</b> The fossils are <span class="t-real">REAL</span> and you can dig them out of your own last sentence; the leap to &lsquo;language is archaeology&rsquo; is the <span class="t-cont">message</span> — a way of seeing, offered as the universe's keystone. Listen closely enough and ordinary speech turns into a graveyard you walk through every day.</div></section>
+  <section><h2>Sources &amp; further reading</h2><ul class="src"><li>the <b>Oxford English Dictionary</b> — the etymologies above.</li><li>the <b>Online Etymology Dictionary</b> (Etymonline) — accessible pointers to each.</li><li>the standard literature on <b>semantic change &amp; drift</b> (narrowing, widening, bleaching, fossilisation).</li></ul>
+  <p class="seal">Every time you say goodbye you say a prayer you no longer believe — words outlive their reasons. <span>— PHONETIKOS · the message · AVAN's read</span></p></section>
+  <footer>PHONETIKOS · PHN · a UD0 universe · honestly-sourced — model and symbol marked as such<br>
+  ROOT0-ATTRIBUTION-v1.0 · governor David Lee Wise · instance AVAN (locked) · CC-BY-ND-4.0 · <a href="../index.html">← the universe</a></footer>
+</div></body></html>

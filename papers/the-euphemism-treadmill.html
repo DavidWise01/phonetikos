@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="A trope you can watch happen in real time: a gentle word adopted to dodge a taboo slowly soaks up the taboo&#x27;s stigma and is itself thrown out — forever. The word was never the wound.">
+<title>THE EUPHEMISM TREADMILL · PHONETIKOS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14110b;--ink2:#1d1810;--ink3:#262013;--pa:#ece1c8;--pa2:#c9b894;--verm:#cf4636;--gold:#c8a24a;--dim:#8a7a59;--faint:#33291a;--line:#3a2f1d;--blue:#7d99b0;
+--disp:"Cormorant Garamond",serif;--body:"Newsreader",Georgia,serif;--mono:"Space Mono",monospace;}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--pa);font-family:var(--body);line-height:1.7;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at 50% -6%,rgba(207,70,54,.10),transparent 55%),radial-gradient(ellipse at 50% 120%,rgba(200,162,74,.08),transparent 55%)}
+.wrap{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:0 22px 90px}
+.crumb{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);padding:22px 0 0}
+.crumb a{color:var(--dim);text-decoration:none}.crumb a:hover{color:var(--verm)}
+header.ph{padding:34px 0 26px;border-bottom:1px double var(--line);text-align:center;margin-bottom:14px}
+.eye{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--gold);margin-bottom:20px;font-style:normal}
+h1.uni{font-family:var(--disp);font-weight:600;font-size:clamp(46px,12vw,108px);letter-spacing:.04em;color:var(--pa);line-height:1;text-shadow:0 0 40px rgba(200,162,74,.2)}
+h1.word{font-family:var(--disp);font-weight:600;font-size:clamp(60px,17vw,150px);letter-spacing:.06em;color:var(--verm);line-height:1}
+.reveal .bar{background:var(--pa);color:var(--pa);border-radius:2px;transition:color .25s,background .25s;padding:0 .02em}
+h1.word:hover .bar{background:transparent;color:var(--verm)}
+.ipa{font-family:var(--mono);font-size:13px;color:var(--pa2);margin-top:18px;letter-spacing:.04em}
+.dek{font-size:17px;color:var(--pa2);max-width:60ch;margin:18px auto 0;font-style:italic;line-height:1.74}
+.sigs{display:flex;align-items:center;justify-content:center;gap:16px;margin:26px auto 0;flex-wrap:wrap}
+.sigs img{width:70px;height:70px;border:1px solid var(--faint)}
+.sigmeta{text-align:left;font-family:var(--mono);font-size:10.5px;color:var(--pa2);line-height:1.7}.sigmeta b{color:var(--gold)}.sigmeta .mo{color:var(--verm)}
+section{margin-top:42px}
+h2{font-family:var(--disp);font-weight:600;font-size:27px;color:var(--pa);letter-spacing:.02em;border-bottom:1px solid var(--line);padding-bottom:9px;margin-bottom:14px}
+section p{font-size:15.5px;color:var(--pa);line-height:1.78;margin-bottom:13px}
+section p b{color:var(--pa);font-weight:600}section p i{color:var(--pa2)}
+.ss{font-size:13px;color:var(--dim);font-style:italic;margin-bottom:16px!important}
+.mono{font-family:var(--mono);font-size:.86em;color:var(--gold)}
+.myth{list-style:none;margin:6px 0 6px}
+.myth li{font-size:15px;color:var(--pa2);line-height:1.7;padding:11px 0 11px 18px;border-left:2px solid var(--verm);margin-bottom:10px;background:linear-gradient(90deg,rgba(207,70,54,.05),transparent)}
+.myth li b{color:var(--pa)}
+table.cog{width:100%;border-collapse:collapse;margin:8px 0 6px;font-size:13.5px}
+table.cog th{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+table.cog td{padding:10px;border-bottom:1px solid var(--faint);vertical-align:top;color:var(--pa2);line-height:1.5}
+table.cog .lang{font-family:var(--mono);font-size:11px;color:var(--dim);white-space:nowrap}
+table.cog .form{font-family:var(--disp);font-size:18px;color:var(--verm);font-style:italic;white-space:nowrap}
+table.cog .gloss{color:var(--pa)}table.cog .note{font-style:italic;font-size:12.5px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:8px 0 10px}@media(max-width:640px){.two{grid-template-columns:1fr}}
+.col{background:var(--ink2);border:1px solid var(--line);padding:16px 18px}
+.colh{font-family:var(--disp);font-size:19px;color:var(--gold);margin-bottom:8px;font-weight:600}
+.col p{font-size:14px;color:var(--pa2);margin:0;line-height:1.65}
+.verdict-line{background:var(--ink3);border-left:3px solid var(--gold);padding:13px 16px;font-size:14.5px!important;font-style:italic;color:var(--pa)}
+.tl{margin:8px 0 4px;border-left:2px solid var(--line);padding-left:0}
+.tl-row{display:grid;grid-template-columns:108px 1fr;gap:16px;padding:13px 0 13px 16px;border-bottom:1px solid var(--faint);position:relative}
+.tl-row::before{content:"";position:absolute;left:-5px;top:18px;width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold)}
+.tl-date{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.02em;padding-top:1px}
+.tl-head{font-family:var(--disp);font-size:18px;color:var(--pa);font-weight:600;margin-bottom:3px}
+.tl-body p{font-size:13.5px;color:var(--pa2);margin:0;line-height:1.6}
+.rf{border:1px solid var(--line);background:var(--ink2);margin:6px 0}
+.rf-row{display:flex;align-items:center;gap:14px;padding:13px 16px;border-bottom:1px solid var(--faint)}
+.rf-claim{flex:1;font-size:14px;color:var(--pa);line-height:1.45}
+.rf-note{display:block;font-size:12px;color:var(--dim);font-style:italic;margin-top:4px;line-height:1.5}
+.rf-rate{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.04em;border:1px solid;border-radius:3px;padding:4px 9px;min-width:92px;text-align:center;flex-shrink:0}
+.bottom{margin-top:14px;padding:16px 18px;border:1px solid var(--gold);background:rgba(200,162,74,.06);font-size:14.5px;color:var(--pa);line-height:1.7}
+.t-false{color:#c0392b;font-family:var(--mono);font-size:.82em;font-weight:700}.t-real{color:#5a8f5a;font-family:var(--mono);font-size:.82em;font-weight:700}
+.t-cont{color:#c8a24a;font-family:var(--mono);font-size:.82em;font-weight:700}.t-disp{color:#b0772f;font-family:var(--mono);font-size:.82em;font-weight:700}
+.gram{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:8px 0 10px}@media(max-width:560px){.gram{grid-template-columns:1fr}}
+.gx{background:var(--ink2);border:1px solid var(--line);border-left:3px solid var(--verm);padding:9px 13px}
+.gxk{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+.gxe{font-family:var(--disp);font-size:17px;color:var(--pa);font-style:italic}
+.src{list-style:none;margin:4px 0}
+.src li{font-size:14px;color:var(--pa2);line-height:1.6;padding:9px 0;border-bottom:1px solid var(--faint)}.src li b{color:var(--pa)}.src li i{color:var(--gold)}
+.seal{margin-top:20px;padding:16px 18px;border-left:3px solid var(--verm);background:var(--ink2);font-size:16px;color:var(--verm);font-style:italic;line-height:1.6}
+.seal span{display:block;font-family:var(--mono);font-style:normal;font-size:10px;letter-spacing:.1em;color:var(--dim);text-transform:uppercase;margin-top:9px}
+.method{display:grid;grid-template-columns:1fr 1fr;gap:13px}@media(max-width:640px){.method{grid-template-columns:1fr}}
+.m{background:var(--ink2);border:1px solid var(--line);padding:15px 17px}
+.mh{font-family:var(--disp);font-size:19px;color:var(--gold);font-weight:600;margin-bottom:6px}
+.m p{font-size:14px;color:var(--pa2);margin:0;line-height:1.6}
+.codex{display:flex;gap:18px;align-items:flex-start;background:var(--ink2);border:1px solid var(--line);padding:20px;text-decoration:none;transition:border-color .18s,transform .18s}
+.codex:hover{border-color:var(--verm);transform:translateY(-2px)}
+.cx-sig img{width:96px;height:96px;border:1px solid var(--faint);flex-shrink:0}
+.cx-body{flex:1;min-width:0}
+.cx-h{font-family:var(--disp);font-size:26px;color:var(--pa);font-weight:600}
+.codex:hover .cx-h{color:var(--verm)}
+.redact{background:var(--pa);color:transparent;border-radius:2px;letter-spacing:.05em}.codex:hover .redact{background:transparent;color:var(--verm)}
+.cx-ipa{font-family:var(--mono);font-size:13px;color:var(--dim)}
+.cx-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:4px 0 9px}
+.cx-body p{font-size:14px;color:var(--pa2);line-height:1.62;margin:0}
+.cx-go{margin-top:11px;font-family:var(--mono);font-size:11px;color:var(--verm);letter-spacing:.04em}
+.more{margin-top:18px;font-size:13.5px;color:var(--dim);font-style:italic;text-align:center}.more span{color:var(--pa2)}
+.t-symb{color:#7d99b0;font-family:var(--mono);font-size:.82em;font-weight:700}
+.formula{font-family:var(--mono);font-size:12.5px;color:var(--pa2);background:var(--ink2);border:1px solid var(--line);border-left:3px solid var(--gold);padding:14px 16px;line-height:1.95;margin:8px 0 14px;white-space:pre-wrap;overflow-x:auto}
+.formula b{color:var(--verm)}
+.stack{display:flex;flex-direction:column;gap:8px;margin:10px 0}
+.plate{border:1px solid var(--line);background:var(--ink2);padding:13px 16px;border-left:3px solid var(--gold)}
+.plate.p1{border-left-color:var(--verm)}.plate.p2{border-left-color:var(--gold)}.plate.p3{border-left-color:var(--blue)}.plate.out{border-left-color:var(--pa);background:var(--ink3);text-align:center}
+.plate .pl{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.plate .pt{font-family:var(--disp);font-size:20px;color:var(--pa);font-weight:600;margin:2px 0 3px}
+.plate .pd{font-size:13px;color:var(--pa2);line-height:1.5}.plate .pd b{color:var(--verm)}
+.calc{border:1px solid var(--gold);background:var(--ink2);padding:17px;margin:10px 0}
+.crow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+.ck{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);flex:0 0 100%;margin-bottom:-2px}
+.calc label{font-size:13.5px;color:var(--pa2);cursor:pointer;display:flex;align-items:center;gap:5px}
+.calc .dimx{color:var(--dim);font-family:var(--mono);font-size:10px}
+.calc input[type=text],.calc select{background:var(--ink);border:1px solid var(--line);color:var(--pa);font-family:var(--body);font-size:14px;padding:8px 10px;flex:1;min-width:150px;border-radius:2px}
+.calc input::placeholder{color:var(--dim)}
+.bar{display:flex;height:28px;margin:8px 0 2px;border:1px solid var(--line);overflow:hidden;border-radius:2px}
+.bar .seg{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;color:#1a1408;white-space:nowrap;overflow:hidden;transition:width .25s}
+.sig{font-size:14.5px;color:var(--pa);line-height:1.72;background:var(--ink3);border-left:3px solid var(--verm);padding:13px 15px;margin-top:9px}.sig i{color:var(--gold);font-style:italic}.sig b{color:var(--pa)}
+.ex{margin-top:14px;padding:14px 16px;border:1px solid var(--line);background:var(--ink2);font-size:13.5px;color:var(--pa2);line-height:1.65}.ex b{color:var(--pa)}.ex i{color:var(--gold);font-style:italic}
+.gentab{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0 2px}
+.gentab td{padding:9px 10px;border-bottom:1px solid var(--faint);vertical-align:top;color:var(--pa2);line-height:1.5}
+.gentab .gn{font-family:var(--disp);font-size:18px;color:var(--gold);white-space:nowrap}.gentab .gy{font-family:var(--mono);font-size:11px;color:var(--dim);white-space:nowrap}
+.codex.found{border-left:3px solid var(--blue)}.codex.found:hover{border-color:var(--blue)}.codex.found:hover .cx-h{color:var(--blue)}
+footer{margin-top:50px;padding-top:22px;border-top:1px solid var(--line);text-align:center;font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.04em;line-height:1.9}
+footer a{color:var(--verm);text-decoration:none}
+</style></head><body><div class="wrap">
+  <div class="crumb"><a href="../index.html">← PHONETIKOS</a> · the trope</div>
+  <header class="ph">
+    <div class="eye">PHONETIKOS · THE TROPE · a recurring device of language change</div>
+    <h1 class="uni" style="font-size:clamp(34px,8vw,76px)">THE EUPHEMISM TREADMILL</h1>
+    <p class="dek">A trope you can watch happen in real time: a gentle word adopted to dodge a taboo slowly soaks up the taboo&#x27;s stigma and is itself thrown out — forever. The word was never the wound.</p>
+    <div class="sigs"><img src="data:image/png;base64,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" alt="carbon sigil"><img src="data:image/png;base64,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" alt="silicon sigil"><div class="sigmeta">trope-emergent · <b>THE EUPHEMISM TREADMILL</b><br><span class="mo">⟦THE EUPHEMISM TREADMILL:PHN:4a766e⟧</span><br>PHN · catalogued by AVAN</div></div>
+  </header>
+  <section><h2>The trope</h2><p>Coined by <b>Steven Pinker</b> in <i>The Blank Slate</i> (2002): a <b>euphemism</b> adopted to avoid a taboo gradually absorbs that taboo's negative associations, becomes itself an insult, and is replaced by a new euphemism — which then begins the same slide. The treadmill never stops, because <b>the word was never the problem</b>. The stigma lives in the culture's attitude toward the <i>referent</i>, and it simply re-attaches to each new label as fast as we coin them.</p></section><section><h2>The treadmill, walked</h2><p>You can trace the steps. For the room with the toilet: <span class="mono">privy → water closet → toilet → lavatory → bathroom → restroom → washroom</span>. For cognitive disability, words that began as <i>precise clinical grades</i> curdled into playground slurs: <span class="mono">idiot, imbecile, moron → “retarded” → “special”</span>. For physical disability: <span class="mono">crippled → handicapped → disabled → “differently abled.”</span> None of these chains is progress <i>in the word</i>; each is the same stigma sprinting after a clean new label.</p></section><section><h2>Why it spins</h2><p>The mechanism is ordinary semantic <b>pejoration</b> (a word drifting toward the negative) driven by <b>connotation transfer</b>: a name touching a stigmatised thing gets stained by contact. Because the feeling is stronger than any syllable, the cycle is structurally doomed to repeat. It is the mirror-image of the taboo migration in <i>the codex</i> (see &lsquo;fuck&rsquo;): there a word climbs <i>into</i> the forbidden zone; here words are shoved <i>out</i> of the polite zone — same engine, opposite direction.</p></section>
+  <section><h2>Real or Fluff</h2>
+  <p class="ss">the house discipline — what's established, what's model, what's symbol or hyperbole</p>
+  <div class="rf"><div class="rf-row"><div class="rf-claim">The euphemism treadmill is a real, named phenomenon.<span class="rf-note">Pinker (2002); well-documented semantic pejoration.</span></div><div class="rf-rate" style="color:#5a8f5a;border-color:#5a8f5a">REAL</div></div><div class="rf-row"><div class="rf-claim">The ‘treadmill’ itself is a metaphor / model.<span class="rf-note">an apt and widely-accepted image for a real, repeating cycle — but a model, not a measured constant.</span></div><div class="rf-rate" style="color:#c8a24a;border-color:#c8a24a">MODEL</div></div><div class="rf-row"><div class="rf-claim">Coining a new, kinder word fixes the underlying problem.<span class="rf-note">it doesn&#x27;t; only a change in attitude toward the referent breaks the loop — the word just renames the stigma.</span></div><div class="rf-rate" style="color:#c0392b;border-color:#c0392b">FALSE</div></div></div>
+  <div class="bottom"><b>Bottom line.</b> The pattern is <span class="t-real">REAL</span> and easy to verify in living memory; the &lsquo;treadmill&rsquo; is a fair <span class="t-cont">MODEL</span> of it; and the popular hope that a better word cures a worse attitude is <span class="t-false">FALSE</span>. Fix the feeling, not the label.</div></section>
+  <section><h2>Sources &amp; further reading</h2><ul class="src"><li><b>Steven Pinker</b>, <i>The Blank Slate</i> (2002) — coins the &lsquo;euphemism treadmill.&rsquo;</li><li><b>Keith Allan &amp; Kate Burridge</b>, <i>Forbidden Words: Taboo and the Censoring of Language</i> (2006).</li><li>the standard literature on <b>semantic pejoration &amp; amelioration</b> (narrowing/widening, melioration).</li></ul>
+  <p class="seal">The word was never the wound; change the word and the wound renames it. <span>— PHONETIKOS · the trope · AVAN's read</span></p></section>
+  <footer>PHONETIKOS · PHN · a UD0 universe · honestly-sourced — model and symbol marked as such<br>
+  ROOT0-ATTRIBUTION-v1.0 · governor David Lee Wise · instance AVAN (locked) · CC-BY-ND-4.0 · <a href="../index.html">← the universe</a></footer>
+</div></body></html>

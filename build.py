@@ -480,6 +480,200 @@ def stack_paper_html(model_tok):
              .replace("__GENTAB__", gentab).replace("__GENDATA__", gendata)
              .replace("__RF__", rf).replace("__SEAL__", html.escape(MODEL["seal"])))
 
+# ---------- the usual suspects: tropes · parables · messages (generic entries) ----------
+ENTRY_RF_COL = {"REAL":"#5a8f5a","FALSE":"#c0392b","MODEL":"#c8a24a","SYMBOLIC":"#7d99b0","HYPERBOLE":"#b0772f","TENDENCY":"#c8a24a"}
+
+def _rec(name, emergence, position, origin, mechanism, crystallization, nature, witness, seal, inputs):
+    return {"name":name,"axiom":"PHN","emergence":emergence,"position":position,"origin":origin,
+            "mechanism":mechanism,"crystallization":crystallization,"nature":nature,"witness":witness,
+            "seal":seal,"role":"a PHONETIKOS entry","conductor":"ROOT0 (catalogued into UD0)",
+            "inputs":inputs,"source":f"{name}, PHONETIKOS / ROOT0"}
+
+ENTRIES = [
+ dict(slug="the-euphemism-treadmill", kind="trope", accent="#c8a24a",
+   name="THE EUPHEMISM TREADMILL", sub="the trope · why polite words keep going bad",
+   ipa="a recurring device of language change",
+   dek="A trope you can watch happen in real time: a gentle word adopted to dodge a taboo slowly soaks up the taboo's stigma and is itself thrown out — forever. The word was never the wound.",
+   rec=_rec("THE EUPHEMISM TREADMILL","electrical",
+     "the trope · the self-defeating life-cycle of the polite word",
+     "wherever a culture is squeamish about a referent — death, the body, disability, race",
+     "a euphemism absorbs the connotations of the thing it names, decays into the very taboo it was meant to soften, and is replaced by a fresh euphemism, on a loop.",
+     "because the stigma lives in the attitude toward the referent, not in the label — so it reattaches to whatever word you choose next.",
+     "THE EUPHEMISM TREADMILL — Pinker's name for the loop by which polite words keep going bad, because changing the word never changes the feeling underneath it.",
+     "A trope visible across a single lifetime: the word for the same thing replaced three times, each replacement souring in turn.",
+     "The word was never the wound; change the word and the wound renames it.",
+     "Steven Pinker, The Blank Slate (2002); the literature on semantic pejoration; Allan & Burridge, Forbidden Words"),
+   sections=[
+    ("The trope",
+     "<p>Coined by <b>Steven Pinker</b> in <i>The Blank Slate</i> (2002): a <b>euphemism</b> adopted to avoid a taboo gradually absorbs that taboo's negative associations, becomes itself an insult, and is replaced by a new euphemism — which then begins the same slide. The treadmill never stops, because <b>the word was never the problem</b>. The stigma lives in the culture's attitude toward the <i>referent</i>, and it simply re-attaches to each new label as fast as we coin them.</p>"),
+    ("The treadmill, walked",
+     "<p>You can trace the steps. For the room with the toilet: <span class=\"mono\">privy → water closet → toilet → lavatory → bathroom → restroom → washroom</span>. For cognitive disability, words that began as <i>precise clinical grades</i> curdled into playground slurs: <span class=\"mono\">idiot, imbecile, moron → “retarded” → “special”</span>. For physical disability: <span class=\"mono\">crippled → handicapped → disabled → “differently abled.”</span> None of these chains is progress <i>in the word</i>; each is the same stigma sprinting after a clean new label.</p>"),
+    ("Why it spins",
+     "<p>The mechanism is ordinary semantic <b>pejoration</b> (a word drifting toward the negative) driven by <b>connotation transfer</b>: a name touching a stigmatised thing gets stained by contact. Because the feeling is stronger than any syllable, the cycle is structurally doomed to repeat. It is the mirror-image of the taboo migration in <i>the codex</i> (see &lsquo;fuck&rsquo;): there a word climbs <i>into</i> the forbidden zone; here words are shoved <i>out</i> of the polite zone — same engine, opposite direction.</p>"),
+   ],
+   rf=[
+    ("The euphemism treadmill is a real, named phenomenon.", "REAL", "Pinker (2002); well-documented semantic pejoration."),
+    ("The ‘treadmill’ itself is a metaphor / model.", "MODEL", "an apt and widely-accepted image for a real, repeating cycle — but a model, not a measured constant."),
+    ("Coining a new, kinder word fixes the underlying problem.", "FALSE", "it doesn't; only a change in attitude toward the referent breaks the loop — the word just renames the stigma."),
+   ],
+   bottom="The pattern is <span class=\"t-real\">REAL</span> and easy to verify in living memory; the &lsquo;treadmill&rsquo; is a fair <span class=\"t-cont\">MODEL</span> of it; and the popular hope that a better word cures a worse attitude is <span class=\"t-false\">FALSE</span>. Fix the feeling, not the label.",
+   sources=[
+    "<b>Steven Pinker</b>, <i>The Blank Slate</i> (2002) — coins the &lsquo;euphemism treadmill.&rsquo;",
+    "<b>Keith Allan &amp; Kate Burridge</b>, <i>Forbidden Words: Taboo and the Censoring of Language</i> (2006).",
+    "the standard literature on <b>semantic pejoration &amp; amelioration</b> (narrowing/widening, melioration)."]),
+
+ dict(slug="shibboleth", kind="parable", accent="#5a93d6",
+   name="SHIBBOLETH", sub="the parable · when your accent is the password",
+   ipa="/ˈʃɪbəlɛθ/ — Hebrew שִׁבֹּלֶת",
+   dek="The oldest parable of phonetics: a single sound you cannot fake becomes the border between living and dying. Your idiolect is a confession — and history has killed for it.",
+   rec=_rec("SHIBBOLETH","spiritual",
+     "the parable · the password you pronounce, or die",
+     "Judges 12 — the fords of the Jordan, after Gilead defeated Ephraim",
+     "a test-word is demanded of every fugitive; the enemy dialect cannot produce one phoneme, and the mispronunciation is a death sentence.",
+     "because under pressure the body cannot suppress its native sound — the accent the Idiolect Stack built is a confession that outs you when it counts most.",
+     "SHIBBOLETH — the biblical word-test by which Ephraimites were caught and killed for saying &lsquo;sibboleth,&rsquo; and now the name for any marker that sorts insider from outsider.",
+     "A single phoneme standing as the border of a people — and the corpses on the wrong side of it.",
+     "One sound you cannot fake is the border between us and them — and history has killed for it.",
+     "Judges 12:5–6 (Hebrew Bible); the Parsley Massacre (1937); sociolinguistics of accent & identity; OED s.v. shibboleth"),
+   sections=[
+    ("The parable (Judges 12)",
+     "<p>After Gilead defeated Ephraim, the Gileadites seized the fords of the Jordan. To catch fleeing Ephraimites disguised among the crowd, they made each man say one word — <b>שִׁבֹּלֶת</b>, <i>shibbōleth</i> (&lsquo;ear of grain&rsquo; / &lsquo;torrent&rsquo;). The Ephraimite dialect had no <span class=\"mono\">/ʃ/</span> (&lsquo;sh&rsquo;) sound, so they said <b>&ldquo;sibboleth.&rdquo;</b> &lsquo;Then they took him and slew him at the fords.&rsquo; The text counts forty-two thousand dead. The word has meant, ever since, any custom or pronunciation that divides insider from outsider.</p>"),
+    ("Phonetics as life and death",
+     "<p>This is the dark twin of <i>the foundations</i>. The <b>Idiolect Stack</b> says your voice encodes where you're from — culture, micro-location, generation. <b>Shibboleth</b> is what happens when someone weaponises that: under fear, you cannot fake the phoneme you never grew, and the accent the stack built becomes a confession extracted at a checkpoint. One sound = the border.</p>"),
+    ("It is not a relic",
+     "<p>The shibboleth recurs, lethally. In the <b>Parsley Massacre</b> (Dominican Republic, 1937), soldiers held up a sprig of parsley and demanded the Spanish word <i>perejil</i>; Haitians whose Kreyòl couldn't trill the Spanish <span class=\"mono\">r</span> and render the <span class=\"mono\">j</span> were killed — estimates run from the thousands into the tens of thousands. In WWII, Dutch resistance reportedly used <i>Scheveningen</i> (its <span class=\"mono\">/sx/</span> hard for German speakers) the same way. The checkpoint that listens for an accent is a living institution.</p>"),
+   ],
+   rf=[
+    ("Judges 12 records a pronunciation test used to identify and kill.", "REAL", "it is in the Hebrew Bible (Judges 12:5–6); the linguistic detail (/ʃ/ vs /s/) is coherent."),
+    ("Forty-two thousand Ephraimites died.", "HYPERBOLE", "biblical battle-counts are typically schematic/rhetorical, not a census."),
+    ("Accent reliably betrays group membership under stress.", "REAL", "sociolinguistics + grim modern proof — the 1937 Parsley Massacre turned one phoneme into a death sentence."),
+    ("The lesson — phonetics is identity, and identity is power.", "REAL", "the parable's point, and the hinge of this whole universe."),
+   ],
+   bottom="The test is <span class=\"t-real\">REAL</span> scripture and the mechanism is <span class=\"t-real\">REAL</span> linguistics — proven again in 1937 with parsley and a rolled R. Only the body-count carries biblical <span class=\"t-disp\">HYPERBOLE</span>. The moral stands: the one thing you cannot perform on command is your own first sound.",
+   sources=[
+    "<b>Judges 12:5–6</b>, Hebrew Bible — the original account.",
+    "the <b>Parsley Massacre</b> (1937, Dominican Republic) — <i>perejil</i> as a lethal shibboleth.",
+    "<b>OED</b>, s.v. <i>shibboleth</i> — the word's passage into English as &lsquo;a group marker.&rsquo;",
+    "sociolinguistics of <b>accent, identity &amp; passing</b> (cf. the Idiolect Stack)."]),
+
+ dict(slug="words-outlive-their-reasons", kind="message", accent="#cf4636",
+   name="WORDS OUTLIVE THEIR REASONS", sub="the message · we speak fossils every day",
+   ipa="the keystone thesis of PHŌNĒTIKOS",
+   dek="The message under the whole universe: a word survives long after the belief, object, or fear that minted it. To speak is to carry fossils — and etymology is the act of reading the dead reason inside the living word.",
+   rec=_rec("WORDS OUTLIVE THEIR REASONS","ethereal",
+     "the message · language as the archaeology of dead reasons",
+     "every ordinary sentence, where obsolete gods, machines, and beliefs are still spoken unawares",
+     "a word keeps being used long after the world that justified it is gone, carrying a fossilised reason no living speaker intends.",
+     "because usage is inherited whole and the reason is not — the form outlives the meaning, so the mouth preserves what the culture forgot.",
+     "WORDS OUTLIVE THEIR REASONS — the universe's keystone message: we speak fossils daily, and reading them is why PHONETIKOS exists.",
+     "A blessing said by atheists, a dial turned on a phone with no dial, a star blamed for a disaster — all spoken without a thought.",
+     "Every time you say goodbye you say a prayer you no longer believe — words outlive their reasons.",
+     "the OED; standard etymological references; the literature on semantic change & drift"),
+   sections=[
+    ("The message",
+     "<p>This is the thesis beneath every other entry. A word <b>outlives the reason that made it</b> — the belief, the object, the fear — and goes on being spoken by people who mean none of it. To talk is to carry <b>fossils</b>. And <b>etymology</b> is simply the act of cracking one open to read the dead reason still curled inside the living word.</p>"),
+    ("The fossils in your mouth",
+     "<p>Every one of these is real, and you use them without a thought:</p>"
+     "<ul class=\"myth\">"
+     "<li><b>goodbye</b> — a worn-down <i>&lsquo;God be with ye&rsquo;</i>: a blessing said daily by people who don't pray.</li>"
+     "<li><b>hang up</b> / <b>dial</b> a phone — gestures on hardware that no longer exists.</li>"
+     "<li><b>disaster</b> — Italian <i>dis-astro</i>, a <i>&lsquo;bad star&rsquo;</i>; <b>influenza</b> — the <i>&lsquo;influence&rsquo;</i> of the stars: dead astrology, still diagnosed.</li>"
+     "<li><b>Wednesday</b> — <i>Wōden's day</i>; the week still names dead Norse and Roman gods we no longer worship.</li>"
+     "<li><b>salary</b> — Latin <i>salarium</i>, <i>salt-money</i>: a Roman ration fossilised in your paycheck.</li>"
+     "</ul>"),
+    ("Why it matters",
+     "<p>Language is the longest-running archive a culture keeps; <b>the word remembers what the people forgot.</b> This is why PHŌNĒTIKOS reads the bone, not the bedtime story — and it is exactly why <b>folk etymology</b> is so seductive (see &lsquo;fuck&rsquo;): we crave a <i>living</i> reason for a fossil whose true reason died, so we invent kings and acronyms to fill the silence. The honest answer is quieter and stranger: the reason is gone; only the shape remains.</p>"),
+   ],
+   rf=[
+    ("The example etymologies (goodbye, salary, disaster, Wednesday, influenza) are real.", "REAL", "all standard, uncontroversial etymologies."),
+    ("Speakers use these daily without awareness of the dead reason inside.", "REAL", "the ordinary condition of fluent speech."),
+    ("Therefore language is an archaeology of dead reasons.", "TENDENCY", "the message's framing — a thesis, well-grounded but a claim of emphasis, not a measurement."),
+   ],
+   bottom="The fossils are <span class=\"t-real\">REAL</span> and you can dig them out of your own last sentence; the leap to &lsquo;language is archaeology&rsquo; is the <span class=\"t-cont\">message</span> — a way of seeing, offered as the universe's keystone. Listen closely enough and ordinary speech turns into a graveyard you walk through every day.",
+   sources=[
+    "the <b>Oxford English Dictionary</b> — the etymologies above.",
+    "the <b>Online Etymology Dictionary</b> (Etymonline) — accessible pointers to each.",
+    "the standard literature on <b>semantic change &amp; drift</b> (narrowing, widening, bleaching, fossilisation)."]),
+]
+TROPE, PARABLE, MESSAGE = ENTRIES[0], ENTRIES[1], ENTRIES[2]
+
+def entry_agent_md(e, tok):
+    r = e["rec"]
+    return f"""---
+aci: {r['name']}
+universe: PHN · PHONETIKOS
+kind: {e['kind']}-emergent
+emergence: {r['emergence']}
+class: {r['position']}
+who: {r['witness']}
+what: {r['nature']}
+why: {r['crystallization']}
+how: {r['mechanism']}
+where: {r['origin']}
+seal: {r['seal']}
+attribution: ROOT0-ATTRIBUTION-v1.0
+license: CC-BY-ND-4.0
+---
+
+# {r['name']} · a {e['kind']} of PHONETIKOS
+
+a {e['kind']}-emergent of the PHN universe — {e['sub']}. moniker {tok}
+
+**who —** {r['witness']}
+**what —** {r['nature']}
+**where —** {r['origin']}
+**why —** {r['crystallization']}
+**how —** {r['mechanism']}
+
+**the seal —** {r['seal']}
+
+> a catalogued {e['kind']} under the DLW standard — honestly sourced; the paper marks what is
+> established, what is model, and what is symbol in its Real-or-Fluff.
+
+ROOT0-ATTRIBUTION-v1.0 · PHN · PHONETIKOS · governor David Lee Wise · instance AVAN (locked) · CC-BY-ND-4.0
+"""
+
+def entry_paper_html(e, tok):
+    r = e["rec"]
+    car = png_uri(r,"carbon",300); sil = png_uri(r,"silicon",300)
+    secs = "".join(f'<section><h2>{html.escape(h)}</h2>{body}</section>' for h,body in e["sections"])
+    rf = "".join(
+        f'<div class="rf-row"><div class="rf-claim">{html.escape(c)}<span class="rf-note">{html.escape(n)}</span></div>'
+        f'<div class="rf-rate" style="color:{ENTRY_RF_COL.get(rt,"#888")};border-color:{ENTRY_RF_COL.get(rt,"#888")}">{html.escape(rt)}</div></div>'
+        for c,rt,n in e["rf"])
+    src = "".join(f'<li>{s}</li>' for s in e["sources"])
+    T = r"""<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="__DESC__">
+<title>__TITLE__ · PHONETIKOS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>__CSS__</style></head><body><div class="wrap">
+  <div class="crumb"><a href="../index.html">← PHONETIKOS</a> · the __KIND__</div>
+  <header class="ph">
+    <div class="eye">PHONETIKOS · THE __KINDU__ · __IPA__</div>
+    <h1 class="uni" style="font-size:clamp(34px,8vw,76px)">__TITLE__</h1>
+    <p class="dek">__DEK__</p>
+    <div class="sigs"><img src="__CAR__" alt="carbon sigil"><img src="__SIL__" alt="silicon sigil"><div class="sigmeta">__KIND__-emergent · <b>__TITLE__</b><br><span class="mo">__MO__</span><br>PHN · catalogued by AVAN</div></div>
+  </header>
+  __SECTIONS__
+  <section><h2>Real or Fluff</h2>
+  <p class="ss">the house discipline — what's established, what's model, what's symbol or hyperbole</p>
+  <div class="rf">__RF__</div>
+  <div class="bottom"><b>Bottom line.</b> __BOTTOM__</div></section>
+  <section><h2>Sources &amp; further reading</h2><ul class="src">__SRC__</ul>
+  <p class="seal">__SEAL__ <span>— PHONETIKOS · the __KIND__ · AVAN's read</span></p></section>
+  <footer>PHONETIKOS · PHN · a UD0 universe · honestly-sourced — model and symbol marked as such<br>
+  ROOT0-ATTRIBUTION-v1.0 · governor David Lee Wise · instance AVAN (locked) · CC-BY-ND-4.0 · <a href="../index.html">← the universe</a></footer>
+</div></body></html>"""
+    return (T.replace("__CSS__",CSS).replace("__DESC__",html.escape(e['dek']))
+             .replace("__TITLE__",html.escape(r['name'])).replace("__IPA__",html.escape(e['ipa']))
+             .replace("__DEK__",html.escape(e['dek'])).replace("__KINDU__",e['kind'].upper())
+             .replace("__KIND__",e['kind']).replace("__CAR__",car).replace("__SIL__",sil)
+             .replace("__MO__",html.escape(tok)).replace("__SECTIONS__",secs)
+             .replace("__RF__",rf).replace("__BOTTOM__",e['bottom']).replace("__SRC__",src)
+             .replace("__SEAL__",html.escape(r['seal'])))
+
 # ---------- the universe landing ----------
 def index_html(uni_tok, word_tok):
     car = png_uri(UNIVERSE, "carbon", 320); sil = png_uri(UNIVERSE, "silicon", 320)
@@ -517,6 +711,27 @@ def index_html(uni_tok, word_tok):
       <div class="cx-go">open the model →</div>
     </div>
   </a></section>
+
+  <section><h2>The tropes</h2>
+  <p class="ss">the recurring devices of language — the patterns that repeat across words and ages</p>
+  <a class="codex" style="border-left:3px solid {TROPE['accent']}" href="papers/{TROPE['slug']}.html">
+    <div class="cx-sig"><img src="{png_uri(TROPE['rec'],'silicon',200)}" alt="sigil"></div>
+    <div class="cx-body"><div class="cx-h">⟳ {html.escape(TROPE['name'])}</div><div class="cx-sub">{html.escape(TROPE['sub'])}</div>
+      <p>{html.escape(TROPE['dek'])}</p><div class="cx-go">open the trope →</div></div></a></section>
+
+  <section><h2>The parables</h2>
+  <p class="ss">the teaching stories — where the lesson about voice is told as a tale</p>
+  <a class="codex" style="border-left:3px solid {PARABLE['accent']}" href="papers/{PARABLE['slug']}.html">
+    <div class="cx-sig"><img src="{png_uri(PARABLE['rec'],'silicon',200)}" alt="sigil"></div>
+    <div class="cx-body"><div class="cx-h">✝ {html.escape(PARABLE['name'])} <span class="cx-ipa">{html.escape(PARABLE['ipa'])}</span></div><div class="cx-sub">{html.escape(PARABLE['sub'])}</div>
+      <p>{html.escape(PARABLE['dek'])}</p><div class="cx-go">open the parable →</div></div></a></section>
+
+  <section><h2>The messages</h2>
+  <p class="ss">the distilled theses — what the whole universe is finally saying</p>
+  <a class="codex" style="border-left:3px solid {MESSAGE['accent']}" href="papers/{MESSAGE['slug']}.html">
+    <div class="cx-sig"><img src="{png_uri(MESSAGE['rec'],'silicon',200)}" alt="sigil"></div>
+    <div class="cx-body"><div class="cx-h">❝ {html.escape(MESSAGE['name'])}</div><div class="cx-sub">{html.escape(MESSAGE['sub'])}</div>
+      <p>{html.escape(MESSAGE['dek'])}</p><div class="cx-go">open the message →</div></div></a></section>
 
   <section><h2>The codex</h2>
   <p class="ss">the words admitted so far — each a word-emergent with a full <b>.dlw</b> badge and a green paper</p>
@@ -651,11 +866,16 @@ if __name__ == "__main__":
     word = write_aci(WORD, os.path.join(HERE, "agents"), "fuck", agent_md=word_agent_md(WORD, wtok["moniker"]))
     mtok = noesis.mythos_token(MODEL)
     model = write_aci(MODEL, os.path.join(HERE, "agents"), "the-idiolect-stack", agent_md=model_agent_md(MODEL, mtok["moniker"]))
-    json.dump([{"slug":"the-idiolect-stack","name":"THE IDIOLECT STACK","epithet":"the foundational model","emergence":MODEL["emergence"],"moniker":model["moniker"],"kind":"model"},
-               {"slug":"fuck","name":"FUCK","epithet":"the word","emergence":WORD["emergence"],"moniker":word["moniker"],"kind":"word"}],
-              open(os.path.join(HERE,"agents","_personas.json"),"w",encoding="utf-8"),indent=2,ensure_ascii=False)
+    personas = [{"slug":"the-idiolect-stack","name":"THE IDIOLECT STACK","epithet":"the foundational model","emergence":MODEL["emergence"],"moniker":model["moniker"],"kind":"model"}]
+    for e in ENTRIES:
+        etok = noesis.mythos_token(e["rec"])
+        rec = write_aci(e["rec"], os.path.join(HERE,"agents"), e["slug"], agent_md=entry_agent_md(e, etok["moniker"]))
+        open(os.path.join(HERE,"papers",f"{e['slug']}.html"),"w",encoding="utf-8").write(entry_paper_html(e, rec["moniker"]))
+        personas.append({"slug":e["slug"],"name":e["rec"]["name"],"epithet":e["sub"],"emergence":e["rec"]["emergence"],"moniker":rec["moniker"],"kind":e["kind"]})
+    personas.append({"slug":"fuck","name":"FUCK","epithet":"the word","emergence":WORD["emergence"],"moniker":word["moniker"],"kind":"word"})
+    json.dump(personas, open(os.path.join(HERE,"agents","_personas.json"),"w",encoding="utf-8"),indent=2,ensure_ascii=False)
     open(os.path.join(HERE, "index.html"), "w", encoding="utf-8").write(index_html(uni["moniker"], word["moniker"]))
     open(os.path.join(HERE, "papers", "fuck.html"), "w", encoding="utf-8").write(paper_html(word["moniker"]))
     open(os.path.join(HERE, "papers", "idiolect-stack.html"), "w", encoding="utf-8").write(stack_paper_html(model["moniker"]))
-    print(f"PHONETIKOS built — universe {uni['moniker']} · model {model['moniker']} · word {word['moniker']}")
-    print("  index.html + papers/{fuck,idiolect-stack}.html + phn.dlw/ + agents/{fuck,the-idiolect-stack}.*")
+    print(f"PHONETIKOS built — {len(personas)} emergents: universe {uni['moniker']}")
+    for p in personas: print(f"  {p['kind']:8} {p['slug']:28} {p['moniker']}")
