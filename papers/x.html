@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="The letter we reach for when we cannot name a thing — the unknown quantity, the unknown ray, the unmarked grave, the stolen surname. Every X is a missing name.">
+<title>X · PHONETIKOS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14110b;--ink2:#1d1810;--ink3:#262013;--pa:#ece1c8;--pa2:#c9b894;--verm:#cf4636;--gold:#c8a24a;--dim:#8a7a59;--faint:#33291a;--line:#3a2f1d;--blue:#7d99b0;
+--disp:"Cormorant Garamond",serif;--body:"Newsreader",Georgia,serif;--mono:"Space Mono",monospace;}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--pa);font-family:var(--body);line-height:1.7;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at 50% -6%,rgba(207,70,54,.10),transparent 55%),radial-gradient(ellipse at 50% 120%,rgba(200,162,74,.08),transparent 55%)}
+.wrap{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:0 22px 90px}
+.crumb{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);padding:22px 0 0}
+.crumb a{color:var(--dim);text-decoration:none}.crumb a:hover{color:var(--verm)}
+header.ph{padding:34px 0 26px;border-bottom:1px double var(--line);text-align:center;margin-bottom:14px}
+.eye{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--gold);margin-bottom:20px;font-style:normal}
+h1.uni{font-family:var(--disp);font-weight:600;font-size:clamp(46px,12vw,108px);letter-spacing:.04em;color:var(--pa);line-height:1;text-shadow:0 0 40px rgba(200,162,74,.2)}
+h1.word{font-family:var(--disp);font-weight:600;font-size:clamp(60px,17vw,150px);letter-spacing:.06em;color:var(--verm);line-height:1}
+.reveal .bar{background:var(--pa);color:var(--pa);border-radius:2px;transition:color .25s,background .25s;padding:0 .02em}
+h1.word:hover .bar{background:transparent;color:var(--verm)}
+.ipa{font-family:var(--mono);font-size:13px;color:var(--pa2);margin-top:18px;letter-spacing:.04em}
+.dek{font-size:17px;color:var(--pa2);max-width:60ch;margin:18px auto 0;font-style:italic;line-height:1.74}
+.sigs{display:flex;align-items:center;justify-content:center;gap:16px;margin:26px auto 0;flex-wrap:wrap}
+.sigs img{width:70px;height:70px;border:1px solid var(--faint)}
+.sigmeta{text-align:left;font-family:var(--mono);font-size:10.5px;color:var(--pa2);line-height:1.7}.sigmeta b{color:var(--gold)}.sigmeta .mo{color:var(--verm)}
+section{margin-top:42px}
+h2{font-family:var(--disp);font-weight:600;font-size:27px;color:var(--pa);letter-spacing:.02em;border-bottom:1px solid var(--line);padding-bottom:9px;margin-bottom:14px}
+section p{font-size:15.5px;color:var(--pa);line-height:1.78;margin-bottom:13px}
+section p b{color:var(--pa);font-weight:600}section p i{color:var(--pa2)}
+.ss{font-size:13px;color:var(--dim);font-style:italic;margin-bottom:16px!important}
+.mono{font-family:var(--mono);font-size:.86em;color:var(--gold)}
+.myth{list-style:none;margin:6px 0 6px}
+.myth li{font-size:15px;color:var(--pa2);line-height:1.7;padding:11px 0 11px 18px;border-left:2px solid var(--verm);margin-bottom:10px;background:linear-gradient(90deg,rgba(207,70,54,.05),transparent)}
+.myth li b{color:var(--pa)}
+table.cog{width:100%;border-collapse:collapse;margin:8px 0 6px;font-size:13.5px}
+table.cog th{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+table.cog td{padding:10px;border-bottom:1px solid var(--faint);vertical-align:top;color:var(--pa2);line-height:1.5}
+table.cog .lang{font-family:var(--mono);font-size:11px;color:var(--dim);white-space:nowrap}
+table.cog .form{font-family:var(--disp);font-size:18px;color:var(--verm);font-style:italic;white-space:nowrap}
+table.cog .gloss{color:var(--pa)}table.cog .note{font-style:italic;font-size:12.5px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:8px 0 10px}@media(max-width:640px){.two{grid-template-columns:1fr}}
+.col{background:var(--ink2);border:1px solid var(--line);padding:16px 18px}
+.colh{font-family:var(--disp);font-size:19px;color:var(--gold);margin-bottom:8px;font-weight:600}
+.col p{font-size:14px;color:var(--pa2);margin:0;line-height:1.65}
+.verdict-line{background:var(--ink3);border-left:3px solid var(--gold);padding:13px 16px;font-size:14.5px!important;font-style:italic;color:var(--pa)}
+.tl{margin:8px 0 4px;border-left:2px solid var(--line);padding-left:0}
+.tl-row{display:grid;grid-template-columns:108px 1fr;gap:16px;padding:13px 0 13px 16px;border-bottom:1px solid var(--faint);position:relative}
+.tl-row::before{content:"";position:absolute;left:-5px;top:18px;width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold)}
+.tl-date{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.02em;padding-top:1px}
+.tl-head{font-family:var(--disp);font-size:18px;color:var(--pa);font-weight:600;margin-bottom:3px}
+.tl-body p{font-size:13.5px;color:var(--pa2);margin:0;line-height:1.6}
+.rf{border:1px solid var(--line);background:var(--ink2);margin:6px 0}
+.rf-row{display:flex;align-items:center;gap:14px;padding:13px 16px;border-bottom:1px solid var(--faint)}
+.rf-claim{flex:1;font-size:14px;color:var(--pa);line-height:1.45}
+.rf-note{display:block;font-size:12px;color:var(--dim);font-style:italic;margin-top:4px;line-height:1.5}
+.rf-rate{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.04em;border:1px solid;border-radius:3px;padding:4px 9px;min-width:92px;text-align:center;flex-shrink:0}
+.bottom{margin-top:14px;padding:16px 18px;border:1px solid var(--gold);background:rgba(200,162,74,.06);font-size:14.5px;color:var(--pa);line-height:1.7}
+.t-false{color:#c0392b;font-family:var(--mono);font-size:.82em;font-weight:700}.t-real{color:#5a8f5a;font-family:var(--mono);font-size:.82em;font-weight:700}
+.t-cont{color:#c8a24a;font-family:var(--mono);font-size:.82em;font-weight:700}.t-disp{color:#b0772f;font-family:var(--mono);font-size:.82em;font-weight:700}
+.gram{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:8px 0 10px}@media(max-width:560px){.gram{grid-template-columns:1fr}}
+.gx{background:var(--ink2);border:1px solid var(--line);border-left:3px solid var(--verm);padding:9px 13px}
+.gxk{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+.gxe{font-family:var(--disp);font-size:17px;color:var(--pa);font-style:italic}
+.src{list-style:none;margin:4px 0}
+.src li{font-size:14px;color:var(--pa2);line-height:1.6;padding:9px 0;border-bottom:1px solid var(--faint)}.src li b{color:var(--pa)}.src li i{color:var(--gold)}
+.seal{margin-top:20px;padding:16px 18px;border-left:3px solid var(--verm);background:var(--ink2);font-size:16px;color:var(--verm);font-style:italic;line-height:1.6}
+.seal span{display:block;font-family:var(--mono);font-style:normal;font-size:10px;letter-spacing:.1em;color:var(--dim);text-transform:uppercase;margin-top:9px}
+.method{display:grid;grid-template-columns:1fr 1fr;gap:13px}@media(max-width:640px){.method{grid-template-columns:1fr}}
+.m{background:var(--ink2);border:1px solid var(--line);padding:15px 17px}
+.mh{font-family:var(--disp);font-size:19px;color:var(--gold);font-weight:600;margin-bottom:6px}
+.m p{font-size:14px;color:var(--pa2);margin:0;line-height:1.6}
+.codex{display:flex;gap:18px;align-items:flex-start;background:var(--ink2);border:1px solid var(--line);padding:20px;text-decoration:none;transition:border-color .18s,transform .18s}
+.codex:hover{border-color:var(--verm);transform:translateY(-2px)}
+.cx-sig img{width:96px;height:96px;border:1px solid var(--faint);flex-shrink:0}
+.cx-body{flex:1;min-width:0}
+.cx-h{font-family:var(--disp);font-size:26px;color:var(--pa);font-weight:600}
+.codex:hover .cx-h{color:var(--verm)}
+.redact{background:var(--pa);color:transparent;border-radius:2px;letter-spacing:.05em}.codex:hover .redact{background:transparent;color:var(--verm)}
+.cx-ipa{font-family:var(--mono);font-size:13px;color:var(--dim)}
+.cx-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:4px 0 9px}
+.cx-body p{font-size:14px;color:var(--pa2);line-height:1.62;margin:0}
+.cx-go{margin-top:11px;font-family:var(--mono);font-size:11px;color:var(--verm);letter-spacing:.04em}
+.more{margin-top:18px;font-size:13.5px;color:var(--dim);font-style:italic;text-align:center}.more span{color:var(--pa2)}
+.t-symb{color:#7d99b0;font-family:var(--mono);font-size:.82em;font-weight:700}
+.formula{font-family:var(--mono);font-size:12.5px;color:var(--pa2);background:var(--ink2);border:1px solid var(--line);border-left:3px solid var(--gold);padding:14px 16px;line-height:1.95;margin:8px 0 14px;white-space:pre-wrap;overflow-x:auto}
+.formula b{color:var(--verm)}
+.stack{display:flex;flex-direction:column;gap:8px;margin:10px 0}
+.plate{border:1px solid var(--line);background:var(--ink2);padding:13px 16px;border-left:3px solid var(--gold)}
+.plate.p1{border-left-color:var(--verm)}.plate.p2{border-left-color:var(--gold)}.plate.p3{border-left-color:var(--blue)}.plate.out{border-left-color:var(--pa);background:var(--ink3);text-align:center}
+.plate .pl{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.plate .pt{font-family:var(--disp);font-size:20px;color:var(--pa);font-weight:600;margin:2px 0 3px}
+.plate .pd{font-size:13px;color:var(--pa2);line-height:1.5}.plate .pd b{color:var(--verm)}
+.calc{border:1px solid var(--gold);background:var(--ink2);padding:17px;margin:10px 0}
+.crow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+.ck{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);flex:0 0 100%;margin-bottom:-2px}
+.calc label{font-size:13.5px;color:var(--pa2);cursor:pointer;display:flex;align-items:center;gap:5px}
+.calc .dimx{color:var(--dim);font-family:var(--mono);font-size:10px}
+.calc input[type=text],.calc select{background:var(--ink);border:1px solid var(--line);color:var(--pa);font-family:var(--body);font-size:14px;padding:8px 10px;flex:1;min-width:150px;border-radius:2px}
+.calc input::placeholder{color:var(--dim)}
+.bar{display:flex;height:28px;margin:8px 0 2px;border:1px solid var(--line);overflow:hidden;border-radius:2px}
+.bar .seg{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;color:#1a1408;white-space:nowrap;overflow:hidden;transition:width .25s}
+.sig{font-size:14.5px;color:var(--pa);line-height:1.72;background:var(--ink3);border-left:3px solid var(--verm);padding:13px 15px;margin-top:9px}.sig i{color:var(--gold);font-style:italic}.sig b{color:var(--pa)}
+.ex{margin-top:14px;padding:14px 16px;border:1px solid var(--line);background:var(--ink2);font-size:13.5px;color:var(--pa2);line-height:1.65}.ex b{color:var(--pa)}.ex i{color:var(--gold);font-style:italic}
+.gentab{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0 2px}
+.gentab td{padding:9px 10px;border-bottom:1px solid var(--faint);vertical-align:top;color:var(--pa2);line-height:1.5}
+.gentab .gn{font-family:var(--disp);font-size:18px;color:var(--gold);white-space:nowrap}.gentab .gy{font-family:var(--mono);font-size:11px;color:var(--dim);white-space:nowrap}
+.codex.found{border-left:3px solid var(--blue)}.codex.found:hover{border-color:var(--blue)}.codex.found:hover .cx-h{color:var(--blue)}
+footer{margin-top:50px;padding-top:22px;border-top:1px solid var(--line);text-align:center;font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.04em;line-height:1.9}
+footer a{color:var(--verm);text-decoration:none}
+</style></head><body><div class="wrap">
+  <div class="crumb"><a href="../index.html">← PHONETIKOS</a> · the codex</div>
+  <header class="ph">
+    <div class="eye">PHONETIKOS · THE CODEX · /ɛks/ — the 24th letter · Greek Χ chi &amp;amp; Ξ xi · Roman numeral 10</div>
+    <h1 class="uni" style="font-size:clamp(34px,8vw,76px)">X</h1>
+    <p class="dek">The letter we reach for when we cannot name a thing — the unknown quantity, the unknown ray, the unmarked grave, the stolen surname. Every X is a missing name.</p>
+    <div class="sigs"><img src="data:image/png;base64,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" alt="carbon sigil"><img src="data:image/png;base64,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" alt="silicon sigil"><div class="sigmeta">codex-emergent · <b>X</b><br><span class="mo">⟦X:PHN:61036f⟧</span><br>PHN · catalogued by AVAN</div></div>
+  </header>
+  <section><h2>The unknown, drawn</h2><p>Every meaning of <b>X</b> is the same idea in different clothes: <b>X is the letter we reach for when we cannot name a thing.</b> The unknown quantity. The unknown ray. The unmarked grave. The stolen surname. Across maths, physics, espionage, cartography and the signature line, X is the placeholder for <i>here is something whose true name we don't have.</i></p>
+<svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;border:1px solid #25291f;border-radius:4px;background:#0a0d0a;margin:12px 0" role="img" aria-label="An original homage: a green portal with a bold X bursting through it.">
+<defs><radialGradient id="pg" cx="0.34" cy="0.5" r="0.5"><stop offset="0" stop-color="#9affc0"/><stop offset="0.5" stop-color="#3fae6a"/><stop offset="1" stop-color="#0a0d0a"/></radialGradient></defs>
+<rect width="640" height="200" fill="#0a0d0a"/>
+<g transform="translate(150,100)"><ellipse rx="92" ry="92" fill="url(#pg)" opacity="0.5"/><ellipse rx="92" ry="92" fill="none" stroke="#5fc98a" stroke-width="3"/><ellipse rx="66" ry="66" fill="none" stroke="#9affc0" stroke-width="1.4" opacity="0.7"/><ellipse rx="42" ry="42" fill="none" stroke="#5fc98a" stroke-width="1" opacity="0.5"/><g fill="#9affc0" opacity="0.7"><circle cx="118" cy="-32" r="3"/><circle cx="-118" cy="40" r="2.5"/><circle cx="98" cy="62" r="2"/><circle cx="-92" cy="-56" r="2"/></g></g>
+<g transform="translate(150,100)" stroke-linecap="round"><line x1="-58" y1="-58" x2="58" y2="58" stroke="#0a0d0a" stroke-width="22"/><line x1="58" y1="-58" x2="-58" y2="58" stroke="#0a0d0a" stroke-width="22"/><line x1="-58" y1="-58" x2="58" y2="58" stroke="#eafff0" stroke-width="12"/><line x1="58" y1="-58" x2="-58" y2="58" stroke="#eafff0" stroke-width="12"/></g>
+<text x="300" y="84" font-family="monospace" font-weight="700" font-size="33" fill="#eafff0">X GON'</text>
+<text x="300" y="122" font-family="monospace" font-weight="700" font-size="33" fill="#5fc98a">GIVE IT TO YA</text>
+<text x="300" y="156" font-family="monospace" font-size="11" fill="#7a8a7a">— DMX, 2002 · an original homage, not the clip</text>
+</svg>
+<p style="font-size:12.5px;color:#8a8a7a;font-style:italic">An <b>original homage</b> — not the copyrighted clip. DMX's 2002 track &ldquo;X Gon' Give It to Ya&rdquo; was famously reused in <i>Rick and Morty</i>; this references the scene, it doesn't reproduce it.</p></section><section><h2>The letter</h2><p>The shape is old. Greek carried two: <b>Χ (chi)</b> and <b>Ξ (xi)</b>; the Western-Greek and Etruscan line handed Latin an <b>X</b> valued <span class="mono">/ks/</span>, the 24th letter. As a <b>Roman numeral, X = 10</b> — most likely a tally notch, a single stroke crossed. Two strokes crossing: that crossing is the whole story.</p></section><section><h2>x, the unknown quantity</h2><p>The algebraic <b>x</b> was fixed by <b>René Descartes</b> in <i>La Géométrie</i> (1637): he used <span class="mono">a, b, c</span> for known quantities and <span class="mono">x, y, z</span> for unknowns, and the convention stuck for good. The popular tale that <b>x</b> descends from Arabic <span class="mono">šay'</span> ('a thing,' the unknown) by way of Old Spanish is charming — and <b>unsupported</b>. The documented fact is Descartes; the rest is a tidy story (see Real-or-Fluff).</p></section><section><h2>The mark of the illiterate</h2><p>For roughly a thousand years, anyone who could not write signed with an <b>X — 'his mark.'</b> And the X was read as a <b>cross</b>: the saltire of St Andrew, and <b>Χ (chi)</b>, the first letter of <i>Christ</i> (the same X in 'Xmas'). The mark was holy, so you <b>kissed it to seal it</b> — which is exactly why <b>X means a kiss</b> on a letter to this day. The honest correction to a common belief: this was <b>not</b> a slave-specific mark. It was the universal signature of the illiterate — medieval peasants, witnesses, the enslaved — anyone whose name went unwritten.</p></section><section><h2>Malcolm X</h2><p>And here the symbol turns its sharpest. <b>Malcolm Little</b> dropped 'Little' — the surname a slaveholder had pressed onto his family — and signed himself <b>Malcolm X</b>: the X standing for the <b>true African family name that slavery erased and he could never recover.</b> It is the deepest use of the letter — <b>X as the missing name itself.</b> From the illiterate hand that drew an X in place of a name, to the X Malcolm took <i>for</i> the name that was taken — the same gesture, the same absence.</p></section><section><h2>X = unknown, everywhere</h2><p>Once you see it, the lineage is everywhere, and it always means the unnamed:</p>
+<ul>
+<li><b>X-rays</b> — Wilhelm Röntgen named them <i>X-Strahlen</i> in 1895 because no one knew what the radiation <i>was</i>. X for unknown.</li>
+<li><b>Mr. X · the X-Files · Brand X · Planet X</b> — the unidentified person, agency, product, world.</li>
+<li><b>X marks the spot</b> — the hidden and the buried.</li>
+<li><b>✗</b> wrong · <b>×</b> times/by · <b>rated X</b> · the <b>X chromosome</b> · <b>Generation X</b>, the 'undefined' cohort.</li>
+<li><b>DMX</b> = 'Dark Man X,' the anonymous man; <b>Xzibit</b> = 'exhibit,' the unknown piece of evidence. Even the rappers are named for the unknown.</li>
+</ul></section>
+  <section><h2>Real or Fluff</h2>
+  <p class="ss">the house discipline — what's established, what's model, what's symbol or hyperbole</p>
+  <div class="rf"><div class="rf-row"><div class="rf-claim">The algebraic x was set by Descartes (1637).<span class="rf-note">La Géométrie — a/b/c for knowns, x/y/z for unknowns; the convention that stuck for good.</span></div><div class="rf-rate" style="color:#5a8f5a;border-color:#5a8f5a">REAL</div></div><div class="rf-row"><div class="rf-claim">x comes from Arabic šay&#x27; (&#x27;a thing&#x27;) via Old Spanish.<span class="rf-note">a charming but unsupported folk etymology; the documented choice is Descartes&#x27;. The tidy &#x27;foreign-word&#x27; origin stories are almost always false.</span></div><div class="rf-rate" style="color:#c0392b;border-color:#c0392b">FALSE</div></div><div class="rf-row"><div class="rf-claim">The X signature was a mark used only by slaves.<span class="rf-note">it was the universal mark of any illiterate person for centuries — peasants, witnesses, and the enslaved alike; never slave-specific.</span></div><div class="rf-rate" style="color:#c0392b;border-color:#c0392b">FALSE</div></div><div class="rf-row"><div class="rf-claim">X means &#x27;a kiss&#x27; because the illiterate&#x27;s X-mark was a cross, sealed with a kiss.<span class="rf-note">the traditional and widely-accepted account — St Andrew&#x27;s cross / chi-for-Christ, kissed to seal the oath.</span></div><div class="rf-rate" style="color:#5a8f5a;border-color:#5a8f5a">REAL</div></div><div class="rf-row"><div class="rf-claim">Röntgen named X-rays &#x27;X&#x27; for the unknown.<span class="rf-note">1895 — X-Strahlen, because the nature of the radiation was unknown.</span></div><div class="rf-rate" style="color:#5a8f5a;border-color:#5a8f5a">REAL</div></div><div class="rf-row"><div class="rf-claim">Malcolm X took X for the African surname slavery erased.<span class="rf-note">stated in his Autobiography — X replaces the slaveholder&#x27;s name &#x27;Little&#x27; and stands for the lost true name.</span></div><div class="rf-rate" style="color:#5a8f5a;border-color:#5a8f5a">REAL</div></div><div class="rf-row"><div class="rf-claim">&#x27;X Gon&#x27; Give It to Ya&#x27; is by Xzibit.<span class="rf-note">it&#x27;s DMX (&#x27;Dark Man X&#x27;), 2002 — Xzibit is a different artist. Fittingly, both stage names mean &#x27;the unknown.&#x27;</span></div><div class="rf-rate" style="color:#c0392b;border-color:#c0392b">FALSE</div></div></div>
+  <div class="bottom"><b>Bottom line.</b> The spine is one line: <b>X is the letter of the unknown and the unnamed.</b> The hard facts are <span class="t-real">REAL</span> — Descartes (1637), Röntgen's X-rays, Malcolm X, the universal illiterate's mark sealed with a kiss. The tidy origin-tales are <span class="t-false">FALSE</span> — x is not from Arabic by any evidence, and the X-mark was never slaves-only. Reach for X whenever the true name is missing; just don't pass the folk-etymology off as fact.</div></section>
+  <section><h2>Sources &amp; further reading</h2><ul class="src"><li><b>OED</b> &amp; <b>etymonline</b>, s.v. <i>X</i>, <i>x</i>, <i>ex-</i>.</li><li><b>Florian Cajori</b>, <i>A History of Mathematical Notations</i> (1928) — on Descartes and the unknown <span class="mono">x</span>.</li><li><b>Wilhelm Röntgen</b> (1895), 'Über eine neue Art von Strahlen' — the X of X-rays.</li><li><b>Malcolm X &amp; Alex Haley</b>, <i>The Autobiography of Malcolm X</i> (1965) — the X for the lost name.</li><li>standard accounts of the <b>X-mark</b> (the signature of the illiterate) and its kiss (St Andrew's cross / chi).</li></ul>
+  <p class="seal">X is the letter of the unknown and the unnamed; reach for it whenever the true name is missing. <span>— PHONETIKOS · the codex · AVAN's read</span></p></section>
+  <footer>PHONETIKOS · PHN · a UD0 universe · honestly-sourced — model and symbol marked as such<br>
+  ROOT0-ATTRIBUTION-v1.0 · governor David Lee Wise · instance AVAN (locked) · CC-BY-ND-4.0 · <a href="../index.html">← the universe</a></footer>
+</div></body></html>

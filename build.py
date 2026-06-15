@@ -490,6 +490,61 @@ def _rec(name, emergence, position, origin, mechanism, crystallization, nature, 
             "inputs":inputs,"source":f"{name}, PHONETIKOS / ROOT0"}
 
 ENTRIES = [
+ dict(slug="x", kind="codex", accent="#5fc98a",
+   name="X", sub="the codex · the symbol of the unknown and the unnamed",
+   ipa="/ɛks/ — the 24th letter · Greek Χ chi &amp; Ξ xi · Roman numeral 10",
+   dek="The letter we reach for when we cannot name a thing — the unknown quantity, the unknown ray, the unmarked grave, the stolen surname. Every X is a missing name.",
+   rec=_rec("X","ethereal",
+     "the codex · the symbol of the unknown and the unnamed",
+     "Greek chi/xi to Roman ten to Descartes' algebra to the illiterate's mark to Malcolm X",
+     "one crossed shape pressed into service wherever a true name is missing — the variable, the ray, the spy, the buried spot, the unwritten signature, the stolen surname",
+     "because a culture needs a single placeholder for 'here is something whose name we don't have,' and X — already the unknown of algebra and the mark of the nameless — became that placeholder everywhere",
+     "X — the letter we reach for when we cannot name a thing: the unknown quantity, the unknown ray, the unmarked grave, the stolen name.",
+     "from the illiterate hand that drew an X in place of a name to the X Malcolm took for the name slavery erased — the same absence, drawn the same way.",
+     "X is the letter of the unknown and the unnamed; reach for it whenever the true name is missing.",
+     "OED/etymonline; Cajori on math notation; Roentgen 1895; the Autobiography of Malcolm X; the standard account of the X-mark and its kiss"),
+   sections=[
+    ("The unknown, drawn", """<p>Every meaning of <b>X</b> is the same idea in different clothes: <b>X is the letter we reach for when we cannot name a thing.</b> The unknown quantity. The unknown ray. The unmarked grave. The stolen surname. Across maths, physics, espionage, cartography and the signature line, X is the placeholder for <i>here is something whose true name we don't have.</i></p>
+<svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto;border:1px solid #25291f;border-radius:4px;background:#0a0d0a;margin:12px 0" role="img" aria-label="An original homage: a green portal with a bold X bursting through it.">
+<defs><radialGradient id="pg" cx="0.34" cy="0.5" r="0.5"><stop offset="0" stop-color="#9affc0"/><stop offset="0.5" stop-color="#3fae6a"/><stop offset="1" stop-color="#0a0d0a"/></radialGradient></defs>
+<rect width="640" height="200" fill="#0a0d0a"/>
+<g transform="translate(150,100)"><ellipse rx="92" ry="92" fill="url(#pg)" opacity="0.5"/><ellipse rx="92" ry="92" fill="none" stroke="#5fc98a" stroke-width="3"/><ellipse rx="66" ry="66" fill="none" stroke="#9affc0" stroke-width="1.4" opacity="0.7"/><ellipse rx="42" ry="42" fill="none" stroke="#5fc98a" stroke-width="1" opacity="0.5"/><g fill="#9affc0" opacity="0.7"><circle cx="118" cy="-32" r="3"/><circle cx="-118" cy="40" r="2.5"/><circle cx="98" cy="62" r="2"/><circle cx="-92" cy="-56" r="2"/></g></g>
+<g transform="translate(150,100)" stroke-linecap="round"><line x1="-58" y1="-58" x2="58" y2="58" stroke="#0a0d0a" stroke-width="22"/><line x1="58" y1="-58" x2="-58" y2="58" stroke="#0a0d0a" stroke-width="22"/><line x1="-58" y1="-58" x2="58" y2="58" stroke="#eafff0" stroke-width="12"/><line x1="58" y1="-58" x2="-58" y2="58" stroke="#eafff0" stroke-width="12"/></g>
+<text x="300" y="84" font-family="monospace" font-weight="700" font-size="33" fill="#eafff0">X GON'</text>
+<text x="300" y="122" font-family="monospace" font-weight="700" font-size="33" fill="#5fc98a">GIVE IT TO YA</text>
+<text x="300" y="156" font-family="monospace" font-size="11" fill="#7a8a7a">— DMX, 2002 · an original homage, not the clip</text>
+</svg>
+<p style="font-size:12.5px;color:#8a8a7a;font-style:italic">An <b>original homage</b> — not the copyrighted clip. DMX's 2002 track &ldquo;X Gon' Give It to Ya&rdquo; was famously reused in <i>Rick and Morty</i>; this references the scene, it doesn't reproduce it.</p>"""),
+    ("The letter", """<p>The shape is old. Greek carried two: <b>Χ (chi)</b> and <b>Ξ (xi)</b>; the Western-Greek and Etruscan line handed Latin an <b>X</b> valued <span class="mono">/ks/</span>, the 24th letter. As a <b>Roman numeral, X = 10</b> — most likely a tally notch, a single stroke crossed. Two strokes crossing: that crossing is the whole story.</p>"""),
+    ("x, the unknown quantity", """<p>The algebraic <b>x</b> was fixed by <b>René Descartes</b> in <i>La Géométrie</i> (1637): he used <span class="mono">a, b, c</span> for known quantities and <span class="mono">x, y, z</span> for unknowns, and the convention stuck for good. The popular tale that <b>x</b> descends from Arabic <span class="mono">šay'</span> ('a thing,' the unknown) by way of Old Spanish is charming — and <b>unsupported</b>. The documented fact is Descartes; the rest is a tidy story (see Real-or-Fluff).</p>"""),
+    ("The mark of the illiterate", """<p>For roughly a thousand years, anyone who could not write signed with an <b>X — 'his mark.'</b> And the X was read as a <b>cross</b>: the saltire of St Andrew, and <b>Χ (chi)</b>, the first letter of <i>Christ</i> (the same X in 'Xmas'). The mark was holy, so you <b>kissed it to seal it</b> — which is exactly why <b>X means a kiss</b> on a letter to this day. The honest correction to a common belief: this was <b>not</b> a slave-specific mark. It was the universal signature of the illiterate — medieval peasants, witnesses, the enslaved — anyone whose name went unwritten.</p>"""),
+    ("Malcolm X", """<p>And here the symbol turns its sharpest. <b>Malcolm Little</b> dropped 'Little' — the surname a slaveholder had pressed onto his family — and signed himself <b>Malcolm X</b>: the X standing for the <b>true African family name that slavery erased and he could never recover.</b> It is the deepest use of the letter — <b>X as the missing name itself.</b> From the illiterate hand that drew an X in place of a name, to the X Malcolm took <i>for</i> the name that was taken — the same gesture, the same absence.</p>"""),
+    ("X = unknown, everywhere", """<p>Once you see it, the lineage is everywhere, and it always means the unnamed:</p>
+<ul>
+<li><b>X-rays</b> — Wilhelm Röntgen named them <i>X-Strahlen</i> in 1895 because no one knew what the radiation <i>was</i>. X for unknown.</li>
+<li><b>Mr. X · the X-Files · Brand X · Planet X</b> — the unidentified person, agency, product, world.</li>
+<li><b>X marks the spot</b> — the hidden and the buried.</li>
+<li><b>✗</b> wrong · <b>×</b> times/by · <b>rated X</b> · the <b>X chromosome</b> · <b>Generation X</b>, the 'undefined' cohort.</li>
+<li><b>DMX</b> = 'Dark Man X,' the anonymous man; <b>Xzibit</b> = 'exhibit,' the unknown piece of evidence. Even the rappers are named for the unknown.</li>
+</ul>"""),
+   ],
+   rf=[
+    ("The algebraic x was set by Descartes (1637).","REAL","La Géométrie — a/b/c for knowns, x/y/z for unknowns; the convention that stuck for good."),
+    ("x comes from Arabic šay' ('a thing') via Old Spanish.","FALSE","a charming but unsupported folk etymology; the documented choice is Descartes'. The tidy 'foreign-word' origin stories are almost always false."),
+    ("The X signature was a mark used only by slaves.","FALSE","it was the universal mark of any illiterate person for centuries — peasants, witnesses, and the enslaved alike; never slave-specific."),
+    ("X means 'a kiss' because the illiterate's X-mark was a cross, sealed with a kiss.","REAL","the traditional and widely-accepted account — St Andrew's cross / chi-for-Christ, kissed to seal the oath."),
+    ("Röntgen named X-rays 'X' for the unknown.","REAL","1895 — X-Strahlen, because the nature of the radiation was unknown."),
+    ("Malcolm X took X for the African surname slavery erased.","REAL","stated in his Autobiography — X replaces the slaveholder's name 'Little' and stands for the lost true name."),
+    ("'X Gon' Give It to Ya' is by Xzibit.","FALSE","it's DMX ('Dark Man X'), 2002 — Xzibit is a different artist. Fittingly, both stage names mean 'the unknown.'"),
+   ],
+   bottom="The spine is one line: <b>X is the letter of the unknown and the unnamed.</b> The hard facts are <span class=\"t-real\">REAL</span> — Descartes (1637), Röntgen's X-rays, Malcolm X, the universal illiterate's mark sealed with a kiss. The tidy origin-tales are <span class=\"t-false\">FALSE</span> — x is not from Arabic by any evidence, and the X-mark was never slaves-only. Reach for X whenever the true name is missing; just don't pass the folk-etymology off as fact.",
+   sources=[
+    "<b>OED</b> &amp; <b>etymonline</b>, s.v. <i>X</i>, <i>x</i>, <i>ex-</i>.",
+    "<b>Florian Cajori</b>, <i>A History of Mathematical Notations</i> (1928) — on Descartes and the unknown <span class=\"mono\">x</span>.",
+    "<b>Wilhelm Röntgen</b> (1895), 'Über eine neue Art von Strahlen' — the X of X-rays.",
+    "<b>Malcolm X &amp; Alex Haley</b>, <i>The Autobiography of Malcolm X</i> (1965) — the X for the lost name.",
+    "standard accounts of the <b>X-mark</b> (the signature of the illiterate) and its kiss (St Andrew's cross / chi)."]),
+
  dict(slug="the-euphemism-treadmill", kind="trope", accent="#c8a24a",
    name="THE EUPHEMISM TREADMILL", sub="the trope · why polite words keep going bad",
    ipa="a recurring device of language change",
@@ -820,6 +875,15 @@ def index_html(uni_tok, word_tok):
       <div class="cx-h">№1 · <span class="redact" title="redacted as f—k for ~170 years">F▆▆K</span> <span class="cx-ipa">/fʌk/</span></div>
       <div class="cx-sub">the history &amp; lineage of a word</div>
       <p>Germanic to the bone; falsely &lsquo;acronymed&rsquo;; enciphered in 1475; exiled from the dictionaries for ~170 years; grammatically the most flexible word in English. The cousins, the real dates, the law, and an honest Real-or-Fluff on every claim.</p>
+      <div class="cx-go">open the green paper →</div>
+    </div>
+  </a>
+  <a class="codex" href="papers/x.html">
+    <div class="cx-sig" style="display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:60px;font-weight:700;color:#5fc98a">X</div>
+    <div class="cx-body">
+      <div class="cx-h">№2 · X <span class="cx-ipa">/ɛks/</span></div>
+      <div class="cx-sub">the symbol of the unknown &amp; the unnamed</div>
+      <p>The letter we reach for when we can't name a thing: the unknown quantity, the unknown ray, the unmarked grave, the stolen surname. Descartes' x, Röntgen's X-ray, the illiterate's mark sealed with a kiss, and Malcolm X — with an honest Real-or-Fluff on the folk-etymologies (no, x isn't from Arabic; no, the X-mark wasn't slaves-only).</p>
       <div class="cx-go">open the green paper →</div>
     </div>
   </a>
